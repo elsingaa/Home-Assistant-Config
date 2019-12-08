@@ -1,0 +1,82 @@
+light:
+  - platform: mqtt
+    name: 'Overloop'
+    state_topic: 'homeassistant/switch/hal/overloop'
+    command_topic: 'homeassistant/switch/hal/overloop/set'
+    payload_on: 'on'
+    payload_off: 'off'
+    state_value_template: '{{ value }}'
+
+  - platform: mqtt
+    name: 'Schilderij'
+    state_topic: 'homeassistant/switch/woonkamer/schilderijen'
+    command_topic: 'homeassistant/switch/woonkamer/schilderijen/set'
+    payload_on: 'on'
+    payload_off: 'off'
+    state_value_template: '{{ value }}'
+
+  - platform: mqtt
+    name: 'Lamp voordeur'
+    state_topic: 'homeassistant/switch/buiten/buitenlampVoordeur'
+    command_topic: 'homeassistant/switch/buiten/buitenlampVoordeur/set'
+    payload_on: 'on'
+    payload_off: 'off'
+    state_value_template: '{{ value }}'
+
+  - platform: mqtt
+    name: 'Lamp achtergevel'
+    state_topic: 'homeassistant/switch/buiten/buitenlampAchtergevel'
+    command_topic: 'homeassistant/switch/buiten/buitenlampAchtergevel/set'
+    payload_on: 'on'
+    payload_off: 'off'
+    state_value_template: '{{ value }}'
+
+  - platform: mqtt
+    name: 'Lamp zijgevel'
+    state_topic: 'homeassistant/switch/buiten/buitenlampZijgevel'
+    command_topic: 'homeassistant/switch/buiten/buitenlampZijgevel/set'
+    payload_on: 'on'
+    payload_off: 'off'
+    state_value_template: '{{ value }}'
+
+  - platform: mqtt
+    name: 'Philipslamp'
+    state_topic: 'homeassistant/switch/keuken/philipslamp'
+    command_topic: 'homeassistant/switch/keuken/philipslamp/set'
+    payload_on: 'on'
+    payload_off: 'off'
+    state_value_template: '{{ value }}'
+
+
+  - platform: group
+    name: buitenverlichting
+    entities:
+      - light.lamp_voordeur
+      - light.lamp_zijgevel
+      - light.lamp_achtergevel
+
+  - platform: group
+    name: halverlichting
+    entities:
+      - light.overloop
+
+
+  - platform: group
+    name: keuken
+    entities:
+      - light.philipslamp
+
+  - platform: group
+    name: woonkamer
+    entities:
+      - light.staande_lamp
+      - light.tradfri_driver
+      - light.achterdebank
+      - light.schilderij
+
+  - platform: group
+    name: Verlichting woonkamer/keuken
+    entities:
+      - light.keuken
+      - light.woonkamer
+

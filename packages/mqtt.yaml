@@ -1,0 +1,8 @@
+mqtt:
+  broker: !secret mqtt_host
+  client_id: homeassistant
+  discovery: true
+  discovery_prefix: homeassistant
+  username: !secret mqtt_user
+  password: !secret mqtt_password
+  protocol: 3.1.1

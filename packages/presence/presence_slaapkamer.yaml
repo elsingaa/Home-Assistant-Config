@@ -1,0 +1,8 @@
+binary_sensor:
+   - platform: mqtt
+     name: ESP32 Slaapkamer
+     state_topic: "presence_nodes/presence_slaapkamer"
+     json_attributes_topic: "presence_nodes/presence_slaapkamer/tele"
+     payload_on: "CONNECTED"
+     payload_off: "DISCONNECTED"
+     device_class: connectivity

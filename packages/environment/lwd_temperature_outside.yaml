@@ -1,0 +1,8 @@
+sensor:
+  - platform: mqtt
+    state_topic: 'homeassistant/sensor/techniek/lwd/ambienttemperature'
+    value_template: '{{ value }}'
+    name: 'Temperatuur buiten'
+    unit_of_measurement: 'ºC'
+    icon: mdi:thermometer
+

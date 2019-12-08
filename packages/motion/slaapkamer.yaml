@@ -1,0 +1,29 @@
+automation:
+- alias: Turn on test light when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.slaapkamer_sensor_deur_motion
+    to: 'on'
+  condition: 
+    - condition: numeric_state
+      entity_id: sensor.sensor_hal_light_level
+      below: 5
+
+    - condition: time
+      after: '06:00:00'
+      before: '22:30:00'
+
+  action:
+    service: light.turn_on
+    entity_id: light.overloop
+
+- alias: Turn off test light 3 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.slaapkamer_sensor_deur_motion
+    to: 'off'
+    for:
+      minutes: 3
+  action:
+    service: light.turn_off
+    entity_id: light.overloop

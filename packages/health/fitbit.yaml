@@ -1,0 +1,6 @@
+sensor:
+  - platform: fitbit
+    clock_format: 24H
+    unit_system: metric
+    monitored_resources:
+      - "activities/steps"

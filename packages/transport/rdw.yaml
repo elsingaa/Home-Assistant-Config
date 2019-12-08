@@ -1,0 +1,109 @@
+sensor:
+  - platform: rdw
+    name: "bmw"
+    plate: !secret rdw_bmwkenteken 
+    dateformat: '%d %b %Y'
+    sensors:
+      - expdate
+      - insured
+      - recall
+
+  - platform: rdw
+    name: "peugeot"
+    plate: !secret rdw_peugeotkenteken
+    dateformat: '%d %b %Y'
+    sensors:
+      - expdate
+      - insured
+      - recall
+
+
+automation:
+   # ------------------------------------------------------- #
+    # Notify 21 days before the APK date expires              #
+    # ------------------------------------------------------- #
+- alias: APK date expiration notification BMW
+  trigger:
+      - platform: template
+        value_template: "{{ ((as_timestamp(strptime(states('sensor.bmw_expdate'), '%d %b %Y')) / 86400) | int) == ((as_timestamp(strptime(states('sensor.date'), '%Y-%m-%d')) / 86400) | int) + 21 }} }}"
+  action:
+      - service: notify.owner
+        data_template:
+          title: '*Auto*'
+          message: De APK keuring verloopt op {{ states.sensor.bmw_expdate.state }}. Plan een APK keuring bij de garage.
+
+    # ------------------------------------------------------- #
+    # Notify when the car's insurance has expired             #
+    # ------------------------------------------------------- #
+- alias: Insurance expiration notification BMW
+  initial_state: True
+  trigger:
+      - platform: state
+        entity_id: sensor.bmw_insured
+        to: 'False'
+  action:
+      - service: notify.owner
+        data_template:
+          title: '*Auto*'
+          message: De auto is niet verzekerd! Sluit een autoverzekering af voordat je ermee de weg op gaat.
+
+    # ------------------------------------------------------- #
+    # Notify when a maintenance recall has been issued        #
+    # ------------------------------------------------------- #
+- alias: Recall notification BMW
+  initial_state: False
+  trigger:
+      - platform: state
+        entity_id: sensor.bmw_recall
+        to: 'True'
+  action:
+      - service: notify.owner
+        data_template:
+          title: '*Auto*'
+          message: Er is een terugroepactie uitgevaardigd voor de auto. Maak een afspraak bij de garage om het probleem te verhelpen.
+
+    # ------------------------------------------------------- #
+    # Notify 21 days before the APK date expires              #
+    # ------------------------------------------------------- #
+
+
+- alias: APK date expiration notification Peugeot
+  trigger:
+      - platform: template
+        value_template: "{{ ((as_timestamp(strptime(states('sensor.peugeot_expdate'), '%d %b %Y')) / 86400) | int) == ((as_timestamp(strptime(states('sensor.date'), '%Y-%m-%d')) / 86400) | int) + 21 }} }}"
+  action:
+      - service: notify.owner
+        data_template:
+          title: '*Auto*'
+          message: De APK keuring verloopt op {{ states.sensor.peugeot_expdate.state }}. Plan een APK keuring bij de garage.
+
+    # ------------------------------------------------------- #
+    # Notify when the car's insurance has expired             #
+    # ------------------------------------------------------- #
+- alias: Insurance expiration notification Peugeot
+  initial_state: True
+  trigger:
+      - platform: state
+        entity_id: sensor.peugeot_insured
+        to: 'False'
+  action:
+      - service: notify.owner
+        data_template:
+          title: '*Auto*'
+          message: De auto is niet verzekerd! Sluit een autoverzekering af voordat je ermee de weg op gaat.
+
+    # ------------------------------------------------------- #
+    # Notify when a maintenance recall has been issued        #
+    # ------------------------------------------------------- #
+- alias: Recall notification Peugeot
+  initial_state: False
+  trigger:
+      - platform: state
+        entity_id: sensor.peugeot_recall
+        to: 'True'
+  action:
+      - service: notify.owner
+        data_template:
+          title: '*Auto*'
+          message: Er is een terugroepactie uitgevaardigd voor de auto. Maak een afspraak bij de garage om het probleem te verhelpen.          
+        

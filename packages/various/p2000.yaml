@@ -1,0 +1,8 @@
+# https://github.com/cyberjunky/home-assistant-custom-components/#p2000-emergency-services-component
+
+sensor:
+  - platform: p2000
+    regios: 1,2
+    disciplines: 1,2,3,4
+    radius: 5000
+    scan_interval: 60

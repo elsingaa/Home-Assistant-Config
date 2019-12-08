@@ -1,0 +1,193 @@
+frontend:
+ themes:
+  carbon-green: 
+    #Color List
+    make-light-carbon: "#93A5AB"
+    make-carbon: "#111924"
+    make-grey: "#DEE5E7"
+    make-green: "#C2DD08"
+    make-blue: "#00A3DA"
+    make-red: "#EC5D57"
+    make-yellow: "#FCF933"
+    make-orange: "#E49D64"
+    make-white: "#FFFFFF"
+    make-disable: "#bdbdbd"
+    light-primary-color: "var(make-light-carbon)"
+    background-color: "var(--make-grey)"
+    dark-primary-color: "var(-make-carbon)"
+    #Main Colors
+    primary-background-color: "var(--make-light-carbon)" #Background color settings
+    secondary-background-color: "var(--make-grey)" #Background tabs
+    primary-text-color: "var(--make-carbon)" #Primary Text 
+    secondary-text-color: "var(--make-green)" #sub text etc.
+    disabled-text-color: "var(--make-disable)" #Deactivated Text
+    divider-color: "var(--make-green)" #Divider Linies
+    primary-color: "var(--make-carbon)" #Head of HA 
+    #Labels
+    label-badge-red: "var(--make-red)"
+    label-badge-blue: "var(--make-blue)"
+    label-badge-green: "var(--make-green)"
+    label-badge-yellow: "var(--make-yellow)"
+    label-badge-grey: "var(--make-grey)"
+    label-badge-text-color: "var(--make-carbon)" #Text color sensors
+    label-badge-background-color: "var(--make-grey)" #Background sensors
+    #Google Loading
+    google-red-500: "var(--make-red)"
+    google-blue-500: "var(--make-blue)"
+    google-green-500:  "var(--make-green)"
+    google-yellow-500: "var(--make-yellow)"
+    #Frontend
+    paper-green-400: "var(--make-green)"
+    paper-blue-400: "var(--make-blue)"
+    paper-orange-400: "var(--make-orange)"
+    paper-grey-50: "var(--make-grey)"
+    paper-grey-200: "var(--make-green)"
+    paper-item-icon-color: "var(--make-grey)" #Color Icon off
+    paper-item-icon-active-color: "var(--make-green)" #Color Icon on
+    paper-button-ink-color: "var(--make-carbon)" #Color Button selected
+    paper-button-color: "var(--make-red)"
+    paper-toggle-button-checked-ink-color: "var(--make-green)"
+    paper-toggle-button-checked-button-color: "var(--make-green)"
+    paper-toggle-button-checked-bar-color: "var(--make-green)"
+    paper-toggle-button-unchecked-button-color: "var(--make-grey)"
+    paper-toggle-button-unchecked-bar-color: "var(--make-grey)"
+    paper-toggle-button-unchecked-ink-color: "var(--make-grey)"
+    paper-slider-knob-color: "var(--make-carbon)" #Slider dot on
+    paper-slider-knob-start-color: "var(--make-carbon)" #Slider dot off
+    paper-slider-pin-color: "var(--make-red)" #
+    paper-slider-active-color: "var(--make-carbon)" #Slider line active
+    paper-slider-secondary-color: "var(--make-red)" #
+    paper-slider-container-color: "var(--make-light-carbon)" #Slider line inactive
+    paper-listbox-color: "var(--make-carbon)"  #Text Dorpdown box
+    paper-listbox-background-color: "var(--make-grey)" #Background of Listen 
+    paper-card-background-color: "var(--make-light-carbon)" #Background from cards in tabs
+    paper-card-header-color: "var(--make-carbon)" #Headline Color of tabs
+    paper-dialog-background-color: "var(--make-grey)" #Color Dialog Box 
+    paper-item-selected_-_background-color: "var(--make-green)" #Selected Option in Dropdown
+    paper-tabs-selection-bar-color: "var(--make-red)" #
+    table-row-background-color: "var(--make-grey)" #Background color table 
+    table-row-alternative-background-color: "var(--make-gery)" #second color table 
+    #Font
+    primary-font-family: "Gill Sans"
+    paper-font-common-base_-_font-family: "var(--primary-font-family)"
+    paper-font-common-code_-_font-family: "var(--primary-font-family)"
+    paper-font-body1_-_font-family: "var(--primary-font-family)"
+    paper-font-subhead_-_font-family: "var(--primary-font-family)"
+    paper-font-headline_-_font-family: "var(--primary-font-family)"
+    paper-font-caption_-_font-family: "var(--primary-font-family)"
+    paper-font-title_-_font-family: "var(--primary-font-family)"
+
+  darkcyan:
+# Main colors that can be changed
+    primary-color: "#00bcd4"
+    disabled-text-color: "#545454"
+    divider-color: "rgba(255, 255, 255, 0.12)"
+    paper-card-background-color: "#4e4e4e"
+    paper-grey-200: "#191919"
+    paper-item-icon-color: "#d3d3d3"
+    paper-listbox-background-color: "#202020"
+    paper-listbox-color: "#FFFFFF"      
+    primary-background-color: "#303030"
+    primary-text-color: "#cfcfcf"      
+    secondary-background-color: "#2b2b2b"
+    secondary-text-color: "#04a7bc"
+# Colors based on variables, see above
+    label-badge-background-color: "var(--secondary-background-color)"
+    label-badge-text-color: "var(--text-primary-color)"
+    paper-card-header-color: "#var(--paper-item-icon-color)"
+    paper-grey-50: "var(--primary-text-color)"
+    paper-item-icon-active-color: "var(--primary-color)"
+    paper-item-icon_-_color: "var(--primary-text-color)"
+    paper-slider-active-color: "var(--primary-color)"
+    paper-slider-knob-color: "var(--primary-color)"
+    paper-slider-knob-start-color: "var(--primary-color)"
+    paper-slider-pin-color: "var(--primary-color)"
+    paper-slider-secondary-color: "var(--light-primary-color)"     
+    paper-toggle-button-checked-ink-color: "var(--dark-primary-color)"
+    paper-toggle-button-checked-button-color: "var(--primary-color)"
+    paper-toggle-button-checked-bar-color: "var(--light-primary-color)"
+    paper-toggle-button-unchecked-bar-color: "var(--primary-text-color)"
+    ha-card-border-radius: "5px"
+    ha-card-box-shadow: "5px 10px rgba(0,0,0,0.3)"
+
+  summer_breeze:
+    lovelace-background: 'center / cover no-repeat url("/local/background-summer_breeze.jpg") fixed' #Background-image
+  # Define basic colors
+    element-dark-color: "rgba(44,29,5,0.9)"                                                                   # nearly black
+    element-light-color: "rgb(47, 35, 23,0.6)"                                                                # Medium grey
+    element-medium-color: "rgba(44,29,5,0.7)"                                                                 # Light grey
+    accent-color: 'rgba(218,165,32,0.8)'                                                                      # dark-yellow
+    accent-color-darker: 'rgba(184,134,11,1)'
+    background-color: '#F7F8F9'                                                                               # Light grey
+    background-color-2: '#dedfe0'                                                                             # Light grey
+    transparent-background-color: 'rgba(255,255,255,0.2)'                                                     # white transparent
+  #transparent-background-color-darker: 'rgba(89,87,86,0.15)'                                               # grey transparent
+    less-transparent-background-color: 'rgba(89,87,86,0.5)'                                                   # grey less transparent
+    non-transparent-background-color: '#A28E66'                                                               # non transparent yelowish grey
+    border-color: '#EAEAEA'                                                                                   # Light grey border
+
+  # Header
+    primary-color: 'var(--non-transparent-background-color)'                                                  # color of the headers background, the highlighted element in the Sidebar, buttons in lovelace
+    text-primary-color: 'var(--element-medium-color)'
+  # Compact Custom Header
+    cch-background: 'var(--less-transparent-background-color)'
+    cch-button-color-menu: 'var(--element-dark-color)'
+
+  # Left Menu
+    paper-listbox-background-color: transparent #'var(--non-transparent-background-color)'                    # Background of the Menu in sidebar (containing shortcuts)
+
+  # UI
+  #paper-card-header-color: #'var(--element-dark-color)'                                                    # Title in settings - doesnt seem to have any effect
+    primary-background: 'var(--background-color)'                                                             # background of dialogs, title background in left menu)
+    sidebar-background: 'var(--background-color-2)'
+    app-toolbar-background-color: transparent
+
+  # Card
+    paper-card-background-color: 'var(--transparent-background-color)'                                        # Background of cards -> mostly transparent
+    ha-card-border-radius: '10px'                                                                             # rounded corners
+  #dark-primary-color: red #'var(--element-dark-color)'                                                     # doesnt seem to have any effect
+  #primary-element-dark-color: red #'var(--element-dark-color)'                                             # doesnt seem to have any effect
+    paper-listbox-color: 'var(--element-dark-color)'
+    light-primary-color: 'var(--accent-color)'
+    secondary-element-dark-color: green #'var(--element-light-color)'
+    paper-dialog-button-color: red #'var(--element-dark-color)'
+    secondary-background-color: transparent #'var(--less-transparent-background-color)'                       # secondary color that can be used by cards, e.g. custom updater card uses it to color every second row, also header of popups
+
+    paper-dialog-background-color: 'var(--background-color)'                                                  # background color of dialogs that appear when clicking on a entity
+    paper-dialog-color: 'var(--element-light-color)'                                                          # text color of these dialogs
+    paper-dialog-header-background: 'var(--element-dark-color)'
+    more-info-header-color: 'var(--element-dark-color)'
+    more-info-header-background: white #'var(--less-transparent-background-color)'
+
+
+  # Icons
+    paper-item-icon-color: 'var(--element-light-color)'                                                       # Off
+    paper-item-icon-active-color: 'var(--accent-color-darker)'                                                # On (gets overriden by light color if its sent)
+
+  # Switches
+    paper-toggle-button-checked-button-color: '#FFF'                                                          # Knob On
+    paper-toggle-button-checked-bar-color:  'var(--accent-color-darker)'                                      # Background On
+    paper-toggle-button-unchecked-button-color: '#FFF'                                                        # Knob Off
+    paper-toggle-button-unchecked-bar-color: 'var(--element-light-color)'                                     # Background Off
+
+
+  #slider
+    paper-slider-knob-color: 'white'                                                                          # color of the handle
+    paper-slider-container-color: 'rgba(44,29,5,0.2)'                                                         # color of the sliders line
+    paper-slider-active-color: 'rgba(44,29,5,0.4)'                                                            # color of the active part of the slider (left of the knob)
+    paper-slider-knob-start-color: 'rgba(255,255,255,0.6)'                                                    # color of the knob when beeing at 0
+    paper-slider-height: '5px'                                                                                # thickness of the sliders' line
+
+  #Progress
+    paper-progress-height: 7px                                                                                # height of the progress bars
+
+  # Shadows
+    shadow-elevation-2dp_-_box-shadow: 'inset 0px 0px 0px 1px var(--border-color)'
+    shadow-elevation-4dp_-_box-shadow: 'var(--shadow-elevation-2dp_-_box-shadow)'
+    shadow-elevation-6dp_-_box-shadow: 'var(--shadow-elevation-2dp_-_box-shadow)'
+    shadow-elevation-8dp_-_box-shadow: 'var(--shadow-elevation-2dp_-_box-shadow)'
+    shadow-elevation-10dp_-_box-shadow: 'var(--shadow-elevation-2dp_-_box-shadow)'
+    shadow-elevation-12dp_-_box-shadow: 'var(--shadow-elevation-2dp_-_box-shadow)'
+    shadow-elevation-14dp_-_box-shadow: 'var(--shadow-elevation-2dp_-_box-shadow)'
+    shadow-elevation-16dp_-_box-shadow: '0px 0px 0px 3px var(--light-color)'
+    ha-card-box-shadow: "0px 5px 5px rgba(0,0,0,0.3)"

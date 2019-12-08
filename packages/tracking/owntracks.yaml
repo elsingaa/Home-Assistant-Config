@@ -1,0 +1,10 @@
+owntracks:
+  max_gps_accuracy: 100
+  waypoints: true
+  mqtt_topic: "owntracks/#"
+  events_only: true
+  waypoint_whitelist:
+    - elsingaa
+    - tineke
+  region_mapping:
+    thuis: thuis

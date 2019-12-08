@@ -1,0 +1,6 @@
+[submodule "custom_components_rdw"]
+	path = custom_components_rdw
+	url = https://github.com/eelcohn/home-assistant-rdw
+[submodule "custom_components/rdw"]
+	path = custom_components/rdw
+	url = https://github.com/eelcohn/home-assistant-rdw

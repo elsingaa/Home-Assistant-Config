@@ -1,0 +1,21 @@
+# Example configuration.yaml entry
+bmw_connected_drive:
+  name:
+    username: !secret bmw_username
+    password: !secret bmw_password
+    region: "rest_of_world"
+
+sensor:
+  - platform: template
+    sensors:
+        320d_brake_fluid_date:
+                value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["brake fluid date"] }}'
+        320d_oil_change_date:
+                value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["oil date"] }}'
+        320d_oil_change_distance:
+                value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["oil distance"] }}'
+        320d_vehiclecheck_date:
+                value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["vehicle check date"] }}'
+        320d_vehicklecheck_distance:
+                value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["vehicle check distance"] }}'
+

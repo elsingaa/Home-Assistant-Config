@@ -1,0 +1,55 @@
+sensor:
+
+  - platform: here_travel_time
+    app_id: !secret here_appid
+    app_code: !secret here_appcode
+    origin_entity_id: person.anne_jan_elsinga
+    destination_entity_id: zone.home
+    traffic_mode: true
+    name: "Reistijd AJ"
+
+  - platform: here_travel_time
+    app_id: !secret here_appid
+    app_code: !secret here_appcode
+    origin_entity_id: person.tineke
+    destination_entity_id: zone.home
+    traffic_mode: true
+    name: "Reistijd Tineke"
+
+  - platform: here_travel_time
+    app_id: !secret here_appid
+    app_code: !secret here_appcode
+    origin_entity_id: zone.home
+    destination_latitude: "52.063557"
+    destination_longitude: "5.257632"
+    traffic_mode: true
+    name: "Politie Driebergen"
+
+
+  - platform: here_travel_time
+    app_id: !secret here_appid
+    app_code: !secret here_appcode
+    origin_entity_id: zone.home
+    destination_latitude: "53.211672"
+    destination_longitude: "6.560674"
+    traffic_mode: true
+    name: "DUO Cascade"
+
+  - platform: here_travel_time
+    app_id: !secret here_appid
+    app_code: !secret here_appcode
+    origin_entity_id: zone.home
+    destination_latitude: "53.2046"
+    destination_longitude: "6.58042"
+    traffic_mode: true
+    name: "DUO Kempkensberg"
+
+
+  - platform: here_travel_time
+    app_id: !secret here_appid
+    app_code: !secret here_appcode
+    origin_entity_id: zone.home
+    destination_latitude: "52.0819"
+    destination_longitude: "4.32555"
+    traffic_mode: true
+    name: "DICTU Den Haag"

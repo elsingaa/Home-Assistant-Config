@@ -1,0 +1,5 @@
+apple_tv_mrp:
+  - name: Woonkamer
+    host: !secret appletv_IP
+    port: !secret appletv_port
+    credentials: !secret appletv_credentials

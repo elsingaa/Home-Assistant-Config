@@ -1,0 +1,31 @@
+automation:
+- alias: "Default Theme after Sunrise"
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: "+00:00:00"
+  action:
+    - service: frontend.set_theme
+      data:
+        name: summer_breeze
+
+- alias: "dark Theme after Sunset"
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "+00:00:00"
+  action:
+    - service: frontend.set_theme
+      data:
+        name: darkcyan
+
+- alias: Set theme at startup
+  trigger:
+  - platform: homeassistant
+    event: start
+  action:
+    service: frontend.set_theme
+    data:
+       name: darkcyan
+#      name: summer_breeze
+#      #  id: 7bbd8a0ba1ea47dfa5e4fa0fa4c55f88

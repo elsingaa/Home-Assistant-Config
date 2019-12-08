@@ -1,0 +1,6 @@
+homekit:
+  filter:
+    include_domains:
+      - light
+      - media_player
+      - switch

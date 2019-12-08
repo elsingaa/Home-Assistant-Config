@@ -1,0 +1,2 @@
+plex:
+  token: !secret plex_token

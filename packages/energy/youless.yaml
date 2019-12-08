@@ -1,0 +1,13 @@
+sensor:
+  - platform: youless
+    name: Youless
+    host: !secret youless_host
+    monitored_variables:
+      - pwr
+      - net
+      - p1
+      - p2
+      - n1
+      - n2
+      - cs0
+      - ps0

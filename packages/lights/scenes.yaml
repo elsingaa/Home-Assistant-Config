@@ -1,0 +1,25 @@
+scene:
+- id: '1574547534018'
+  name: Naar bed
+  entities:
+    light.achterdebank:
+      state: 'off'
+    light.buiten_voordeur:
+      state: 'off'
+    light.lamp_achtergevel:
+      state: 'off'
+    light.lamp_zijgevel:
+      state: 'off'
+    light.overloop:
+      state: 'on'
+    light.philipslamp:
+      state: 'off'
+    light.staande_lamp:
+      state: 'off'
+    light.tradfri_driver:
+      state: 'off'
+    media_player.denon_avr_x2100w:
+      state: 'off'
+    media_player.samsung_tv_remote:
+      state: 'off'
+

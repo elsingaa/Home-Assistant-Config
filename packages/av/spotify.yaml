@@ -1,0 +1,9 @@
+media_player:
+  - platform: spotify
+    client_id: !secret spotify_clientid
+    client_secret: !secret spotify_secret
+    aliases:
+       3cb078463b4e8c407ab81f55b0654b7e86599735: 'Woonkamer'
+       53b6c0270a126174e54d88a124dc738fe8957d61: 'MBP AJ'
+       aae59f9dbbc056f4099cc95df19cae6fd6936f31: 'Fitness'
+       6a4cbecc3f9e5dfe311c25e720d82ba72bb2a2f9: 'Keuken'

@@ -1,0 +1,21 @@
+automation:
+  - alias: Refresh date countdown sensors
+    initial_state: on
+    trigger:
+      - platform: time
+        at: '00:00:01'
+      - platform: homeassistant
+        event: start
+    action:
+      - service: python_script.date_countdown
+        data:
+          name: Legiorun
+          type: hardlopen
+          date: 04/04/2020
+
+      - service: python_script.date_countdown
+        data:
+          name: Run for KiKa
+          type: hardlopen
+          date: 18/04/2020
+

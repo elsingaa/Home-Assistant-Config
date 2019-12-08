@@ -1,0 +1,7 @@
+luftdaten:
+  sensor_id: !secret luftdaten_sensorid
+  show_on_map: true
+  sensors:
+    monitored_conditions:
+      - P1
+      - P2

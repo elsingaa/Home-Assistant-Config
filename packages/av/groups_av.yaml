@@ -1,0 +1,7 @@
+group:
+  musicspotify:
+    name: Music
+    entities:
+    - input_select.spotify_playlist
+    - input_select.spotify_source
+    - script.spotify_music

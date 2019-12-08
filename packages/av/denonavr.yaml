@@ -1,0 +1,10 @@
+# Example configuration.yaml entry
+media_player:
+  - platform: denonavr
+    host: !secret denon_IP 
+    name: Denon X2100W
+    show_all_sources: false
+    timeout: 2
+    zones:
+      - zone: Zone2 
+        name: Werkkamer

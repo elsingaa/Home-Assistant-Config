@@ -1,0 +1,7 @@
+sensor:
+  - platform: mqtt
+    state_topic: 'homeassistant/sensor/techniek/lwd/flow'
+    value_template: '{{ value }}'
+    name: 'Temperatuur flow'
+    unit_of_measurement: 'ºC'
+    icon: mdi:thermometer

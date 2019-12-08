@@ -1,0 +1,24 @@
+binary_sensor:
+   - platform: mqtt
+     name: Raam Werkkamer
+     state_topic: "homeassistant/sensor/werkkamer/raam1"
+     value_template: "{{ value }}"
+     payload_on: "on"
+     payload_off: "off"
+     device_class: window
+
+   - platform: mqtt
+     name: Raam Slaapkamer
+     state_topic: "homeassistant/sensor/slaapkamer/raamSlaapkamer"
+     value_template: "{{ value }}"
+     payload_on: "on"
+     payload_off: "off"
+     device_class: window
+
+   - platform: mqtt
+     name: Raam Fitness
+     state_topic: "homeassistant/sensor/fitness/raam"
+     value_template: "{{ value }}"
+     payload_on: "on"
+     payload_off: "off"
+     device_class: window

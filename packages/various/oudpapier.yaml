@@ -1,0 +1,12 @@
+garbage_collection:
+  sensors:
+  - name: Oud papier Woudklank
+    frequency: "monthly"
+    collection_days: mon
+    weekday_order_number: 3
+
+  - name: Oud papier Oranje
+    frequency: "monthly"
+    collection_days: fri
+    weekday_order_number: 1
+

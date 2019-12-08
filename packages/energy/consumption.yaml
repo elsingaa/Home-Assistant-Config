@@ -1,0 +1,31 @@
+sensor:
+  - platform: mqtt
+    name: 'Wasmachine'
+    state_topic: 'homeassistant/sensor/bijkeuken/wasmachine-Energy'
+    unit_of_measurement: 'W'
+    value_template: '{{ value | round(1)}}'
+
+  - platform: mqtt
+    name: 'Koffieapparaat'
+    state_topic: 'homeassistant/sensor/keuken/koffieapparaat-Energy'
+    unit_of_measurement: 'W'
+    value_template: '{{ value | round(1)}}'
+
+  - platform: mqtt
+    name: 'Vaatwasser'
+    state_topic: 'homeassistant/sensor/keuken/vaatwasser-Power'
+    unit_of_measurement: 'W'
+    value_template: '{{ value | round(1) }}'
+
+
+  - platform: mqtt
+    name: 'Computerrack'
+    state_topic: 'homeassistant/sensor/werkkamer/computerrack-Electric'
+    unit_of_measurement: 'W'
+    value_template: '{{ value | round(1) }}'
+
+  - platform: mqtt
+    name: 'Vaatwasser'
+    state_topic: 'homeassistant/sensor/keuken/vaatwasser-Power'
+    unit_of_measurement: 'W'
+    value_template: '{{ value }}'

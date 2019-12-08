@@ -1,0 +1,10 @@
+group:
+  thuiskomlicht:
+    name: Thuiskomen
+    entities:
+    - light.lamp_voordeur
+    - light.lamp_zijgevel
+    - light.overloop
+    - light.achterdebank
+    - light.staande_lamp
+    - light.tradfri_driver

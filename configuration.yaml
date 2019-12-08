@@ -1,0 +1,24 @@
+
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+homeassistant:
+   packages: !include_dir_named packages
+#   customize: !include customize.yaml
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+http:
+        base_url: !secret homeassistant_baseurl 
+
+logger:
+   default: warning
+   logs:
+        homeassistant.components.media_player.spotify: info
+#        homeassistant.components.mqtt: debug
+
+api:
+
+discovery:
+
+config:
+
+script: !include_dir_merge_named scripts

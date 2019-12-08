@@ -1,0 +1,5 @@
+camera:
+  - platform: generic
+    name: Achtergevel
+    still_image_url: http://192.168.1.90/snap.jpeg
+    stream_source: rtsp://192.168.1.2:7447/9n76hxLjl627koBP

@@ -1,0 +1,15 @@
+garbage_collection:
+  sensors:
+  - name: Groene container # Each week on Wednesday
+    frequency: "even-weeks"
+    collection_days: thu
+    exclude_dates:
+      - '2019-12-26'
+  - name: Milieuboer # Each week on Wednesday
+    frequency: "weekly"
+    collection_days: wed
+    exclude_dates:
+      - '2019-12-25'
+  - name: Restafval
+    frequency: "odd-weeks"
+    collection_days: thu

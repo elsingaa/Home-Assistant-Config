@@ -1,0 +1,29 @@
+
+homeassistant:
+  customize:
+    script.spotify_music:
+      friendly_name: Afspelen
+      icon: mdi:play
+    light.staande_lamp:
+      icon: mdi:floor-lamp
+    light.tradfri_driver:
+      icon: mdi:book-open-page-variant
+    light.achterdebank:
+      icon: mdi:floor-lamp-dual
+    light.schilderij:
+      icon: mdi:aspect-ratio
+
+
+    sensor.bmw_expdate:
+      friendly_name: "BMW APK"
+    sensor.bmw_insured:
+      friendly_name: "BMW Verzekering"
+    sensor.bmw_recall:
+      friendly_name: "BMW Terugroep"
+
+    sensor.peugeot_expdate:
+      friendly_name: "Peugeot APK"
+    sensor.peugeot_insured:
+      friendly_name: "Peugeot Verzekering"
+    sensor.peugeot_recall:
+      friendly_name: "Peugeot Terugroep"

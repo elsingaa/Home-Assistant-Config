@@ -1,0 +1,7 @@
+sensor:
+  - platform: mqtt
+    state_topic: 'monitor/monitor_keuken/iphone_aj'
+    value_template: '{{ value_json.confidence }}'
+    unit_of_measurement: '%'
+    name: 'Keuken'
+

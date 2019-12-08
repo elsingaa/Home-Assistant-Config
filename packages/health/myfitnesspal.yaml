@@ -1,0 +1,12 @@
+sensor:
+  - platform: my_fitnesspal
+    name: myfitnesspal                
+    username: !secret myfitnesspal_user
+    password: !secret myfitnesspal_password
+
+
+  - platform: template
+    sensors:
+        weight_aj:
+                value_template: '{{ states.sensor.myfitnesspal_myfitnesspal.attributes.weight }}'
+                unit_of_measurement: "kg"
