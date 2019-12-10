@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#        HOMEKIT INTEGRATION AND SYNCHRONIZATION        #
+#                                                       #
+#########################################################
 homekit:
   filter:
     include_domains:

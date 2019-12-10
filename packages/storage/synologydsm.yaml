@@ -1,5 +1,9 @@
-# Synology
-# https://www.home-assistant.io/integrations/synologydsm/
+#########################################################
+#                                                       #
+#         SYNOLOGY INTEGRATION AND MONITORING           #
+#                                                       #
+#https://www.home-assistant.io/integrations/synologydsm #
+#########################################################
 sensor:
   - platform: synologydsm
     host: !secret nas02_host 

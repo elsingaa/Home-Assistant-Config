@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#         LIGHTS OF WHEN FIRST PERSON AT HOME           #
+#                                                       #
+#########################################################
 automation:
   - alias: 'Lights on when first person arrives'
     initial_state: 'on'

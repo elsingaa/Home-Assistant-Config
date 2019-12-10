@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#                     PRESENCE DETECTION                #
+#                                                       #
+#########################################################
 input_boolean:
   notify_home:
     name: Notify when someone arrives home

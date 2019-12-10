@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#             MOTION RESPONSE IN THE BEDROOM            #
+#                                                       #
+#########################################################
 automation:
 - alias: Turn on test light when there is movement
   trigger:
@@ -11,7 +16,7 @@ automation:
 
     - condition: time
       after: '06:00:00'
-      before: '22:30:00'
+      before: '22:45:00'
 
   action:
     service: light.turn_on

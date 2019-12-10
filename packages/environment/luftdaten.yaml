@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#                  AIR QUALITY SENSORS                  #
+#                                                       #
+#########################################################
 luftdaten:
   sensor_id: !secret luftdaten_sensorid
   show_on_map: true

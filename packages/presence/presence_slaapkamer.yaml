@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#         PRESENCE DETECTION BASED ON BLUETHOOTH        #
+#                                                       #
+#########################################################
 binary_sensor:
    - platform: mqtt
      name: ESP32 Slaapkamer

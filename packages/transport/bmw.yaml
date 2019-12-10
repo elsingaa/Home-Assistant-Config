@@ -1,4 +1,8 @@
-# Example configuration.yaml entry
+#########################################################
+#                                                       #
+#   BMW INFORMATION VIA CONNECTEDDRIVE INTEGRATION      #
+#                                                       #
+#########################################################
 bmw_connected_drive:
   name:
     username: !secret bmw_username

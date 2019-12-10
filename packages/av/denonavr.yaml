@@ -1,4 +1,8 @@
-# Example configuration.yaml entry
+#########################################################
+#                                                       #
+#              Denon X2100W configuration               #
+#                                                       #
+#########################################################
 media_player:
   - platform: denonavr
     host: !secret denon_IP 

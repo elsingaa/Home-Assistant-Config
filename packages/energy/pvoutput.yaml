@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#           ENERGY PRODUCTION SOLAR SENSORS             #
+#                                                       #
+#########################################################
 sensor:
   - platform: pvoutput
     system_id: !secret pvoutput_systemid

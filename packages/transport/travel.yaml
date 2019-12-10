@@ -1,5 +1,9 @@
+#########################################################
+#                                                       #
+#        TRAVEL TIMES BASED ON LOCATION                 #
+#                                                       #
+#########################################################
 sensor:
-
   - platform: here_travel_time
     app_id: !secret here_appid
     app_code: !secret here_appcode

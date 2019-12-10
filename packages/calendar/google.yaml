@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#     CONFIGURATION OF GOOGLE CALENDAR INTEGRATION      #
+#                                                       #
+#########################################################
 google:
   client_id: !secret google_clientid
   client_secret: !secret google_clientsecret

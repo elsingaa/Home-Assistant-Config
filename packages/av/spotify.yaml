@@ -1,3 +1,9 @@
+#########################################################
+#                                                       #
+#        CONFIGURATION OF SPOTIFY INTEGRATION           #
+#                                                       #
+#########################################################
+
 media_player:
   - platform: spotify
     client_id: !secret spotify_clientid

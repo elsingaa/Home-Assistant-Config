@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#         PRESENCE DETECTION BASED ON IPHONE            #
+#                                                       #
+#########################################################
 sensor:
   - platform: mqtt
     state_topic: 'monitor/monitor_keuken/iphone_aj'

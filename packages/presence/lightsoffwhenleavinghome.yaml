@@ -1,5 +1,10 @@
+#########################################################
+#                                                       #
+#             LIGHTS OF WHEN LEAVING HOME               #
+#                                                       #
+#########################################################
 automation:
-  - alias: 'Lights on when first person arrives'
+  - alias: 'Lights off when last person leaves'
     initial_state: 'on'
     trigger:
     - platform: state

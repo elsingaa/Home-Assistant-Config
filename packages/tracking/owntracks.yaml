@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#        LOCATION TRACKING WITH OWNTRACKS               #
+#                                                       #
+#########################################################
 owntracks:
   max_gps_accuracy: 100
   waypoints: true

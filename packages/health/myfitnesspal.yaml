@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#               HEALTH SENSOR MY FITNESSPAL             #
+#                                                       #
+#########################################################
 sensor:
   - platform: my_fitnesspal
     name: myfitnesspal                

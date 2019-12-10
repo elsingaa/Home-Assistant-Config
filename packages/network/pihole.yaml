@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#                  PIHOLE INTEGRATION                   #
+#                                                       #
+#########################################################
 pi_hole:
    host: !secret pihole_host 
    api_key: !secret pihole_apikey 

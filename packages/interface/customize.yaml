@@ -1,4 +1,8 @@
-
+#########################################################
+#                                                       #
+#             CUSTOMIZING SENSORS AND ICONS             #
+#                                                       #
+#########################################################
 homeassistant:
   customize:
     script.spotify_music:

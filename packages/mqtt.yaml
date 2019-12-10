@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#        MESSAGEBUS VIA MQTT INTEGRATION                #
+#                                                       #
+#########################################################
 mqtt:
   broker: !secret mqtt_host
   client_id: homeassistant
