@@ -31,3 +31,7 @@ homeassistant:
       friendly_name: "Peugeot Verzekering"
     sensor.peugeot_recall:
       friendly_name: "Peugeot Terugroep"
+    
+    
+
+   
