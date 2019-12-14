@@ -112,3 +112,22 @@ automation:
           title: '*Auto*'
           message: Er is een terugroepactie uitgevaardigd voor de auto. Maak een afspraak bij de garage om het probleem te verhelpen.          
         
+homeassistant:
+  customize:
+    sensor.bmw_expdate:
+      friendly_name: "BMW APK"
+    sensor.bmw_insured:
+      friendly_name: "BMW Verzekering"
+    sensor.bmw_recall:
+      friendly_name: "BMW Terugroep"
+
+    sensor.peugeot_expdate:
+      friendly_name: "Peugeot APK"
+    sensor.peugeot_insured:
+      friendly_name: "Peugeot Verzekering"
+    sensor.peugeot_recall:
+      friendly_name: "Peugeot Terugroep"
+    
+    
+
+   
