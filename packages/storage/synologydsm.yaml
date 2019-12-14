@@ -16,3 +16,26 @@ sensor:
       - network_down
       - volume_percentage_used
       - disk_smart_status
+      - volume_status
+      - volume_disk_temp_max
+
+
+#########################################################
+#                                                       #
+#         Customizing names and icons                   #
+#                                                       #
+#https://www.home-assistant.io/integrations/synologydsm #
+#########################################################
+
+homeassistant:
+  customize:
+    sensor.synology_dsm_status_volume_1:
+      icon: mdi:nas
+    sensor.synology_dsm_status_smart_sda:
+      icon: mdi:harddisk
+    sensor.synology_dsm_status_smart_sdb:
+      icon: mdi:harddisk
+    sensor.synology_dsm_status_smart_sdc:
+      icon: mdi:harddisk
+    sensor.synology_dsm_status_smart_sdd:
+      icon: mdi:harddisk
