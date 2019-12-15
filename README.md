@@ -43,7 +43,7 @@ SolarEdge | Solar Panels
 ## Health
 Kind | explanation
 --- | --- 
-FitBit | Health wife
+FitBit | Fitbit wife
 MyFitnessPal | My own health
 
 ## Environment
