@@ -21,11 +21,11 @@ Ikea Tradfri | |
 
 Vendor | Device | |
 --- | --- | --- 
-Apple | Apple TV |  | 
-Denon |  X2100 AVR | 
-Plex | Plex |
-Spotify | Spotify |
-Samsung | Samsung TV |
+Apple | Apple TV | ![Apple TV](www/images/README/apple-tv-4gen.jpg) | 
+Denon |  X2100W AVR | ![Denon X2100W AVR](www/images/README/denonx2100w.jpg)
+Plex | Plex |  ![Plex](www/images/README/plex.jpg)
+Spotify | Spotify | ![Spotify](www/images/README/spotify.png)
+Samsung | Samsung UE46D6200 | ![Spotify](www/images/README/samsung_ue46d6200.jpg) 
 
 ## Network / Wireless
 Kind | explanation
