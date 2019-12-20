@@ -1,0 +1,55 @@
+#########################################################
+#                                                       #
+#                       PRESENCE PING                   #
+#                                                       #
+#########################################################
+
+binary_sensor:
+
+  ##########################################################
+  ## iPhones
+  ##########################################################
+
+  - platform: ping
+    host: !secret ping_iPhoneAJ
+    name: ping_iPhoneAJ
+    scan_interval: 120
+
+  - platform: ping
+    host: !secret ping_iPhoneTineke
+    name: ping_iPhoneTineke
+    scan_interval: 120
+
+  - platform: ping
+    host: !secret ping_werktelefoonAJ
+    name: ping_werktelefoonAJ
+    scan_interval: 120
+
+
+
+  ##########################################################
+  ## iPhones
+  ##########################################################
+
+  - platform: ping
+    host: !secret ping_werklaptopAJ
+    name: ping_werklaptopAJ
+    scan_interval: 120
+
+##########################################################
+## Bayesian
+##########################################################
+
+
+  - platform: bayesian
+    name: athomesensorAJ
+    device_class: 'presence'
+    prior: 0.67
+    probability_threshold: 0.5
+    observations:
+      - entity_id: 'binary_sensor.ping_iphoneaj'
+        prob_given_true: 1
+        prob_given_false: 0
+        platform: 'state'
+        to_state: 'on'
+      
