@@ -9,6 +9,7 @@ sensor:
     app_code: !secret here_appcode
     origin_entity_id: person.anne_jan_elsinga
     destination_entity_id: zone.home
+    scan_interval: 600
     traffic_mode: true
     name: "Reistijd AJ"
 
@@ -17,6 +18,7 @@ sensor:
     app_code: !secret here_appcode
     origin_entity_id: person.tineke
     destination_entity_id: zone.home
+    scan_interval: 600
     traffic_mode: true
     name: "Reistijd Tineke"
 
