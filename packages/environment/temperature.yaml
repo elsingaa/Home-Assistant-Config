@@ -1,0 +1,7 @@
+sensor:
+  - platform: mqtt
+    state_topic: 'homeassistant/sensor/keuken/keuken-Temperatuur'
+    value_template: '{{ value }}'
+    name: 'Temperatuur  keuken'
+    unit_of_measurement: 'ºC'
+    icon: mdi:thermometer

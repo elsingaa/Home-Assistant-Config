@@ -1,0 +1,7 @@
+sensor:
+  - platform: mqtt
+    state_topic: 'homeassistant/sensor/keuken/keuken-Luchtvochtigheid'
+    value_template: '{{ value }}'
+    name: 'Luchtvochtigheid keuken'
+    unit_of_measurement: '%'
+    icon: mdi:water-percent

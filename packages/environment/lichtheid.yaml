@@ -1,0 +1,7 @@
+sensor:
+  - platform: mqtt
+    state_topic: 'homeassistant/sensor/keuken/keuken-Light'
+    value_template: '{{ value }}'
+    name: 'Licht keuken'
+    unit_of_measurement: 'lx'
+    icon: mdi:sun
