@@ -85,3 +85,18 @@ light:
       - light.keuken
       - light.woonkamer
 
+  - platform: group
+    name: Verlichting slaapkamer
+    entities:
+      - light.slaapkamer_achter_kast
+      - light.nachtkastje_aj
+      - light.nachtkastje_tineke
+      - light.bed_kant_anne_jan
+
+  - platform: group
+    name: Verlichting huis
+    entities:
+      - light.verlichting_woonkamer_keuken
+      - light.verlichting_slaapkamer
+      - light.buitenverlichting
+
