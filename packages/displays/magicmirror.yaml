@@ -1,0 +1,61 @@
+#########################################################
+#                                                       #
+#      SETTINGS & CUSTOMIZATION FOR MAGIC MIRROR        #
+#                                                       #
+#########################################################
+sensor:
+   - platform: template
+     sensors:
+       slaapkamer_raam_status:
+         value_template: '{% if states.binary_sensor.raam_slaapkamer %}
+          {% if states.binary_sensor.raam_slaapkamer.state == "on" %}
+            Open
+          {% else %}
+            Dicht
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'
+         friendly_name: 'Slaapkamerraam'
+
+   - platform: template
+     sensors:
+       werkkamer_raam_status:
+         value_template: '{% if states.binary_sensor.raam_werkkamer %}
+          {% if states.binary_sensor.raam_werkkamer.state == "on" %}
+            Open
+          {% else %}
+            Dicht
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'
+         friendly_name: 'Werkkamerraam'
+
+   - platform: template
+     sensors:
+       fitness_raam_status:
+         value_template: '{% if states.binary_sensor.raam_fitness %}
+          {% if states.binary_sensor.raam_fitness.state == "on" %}
+            Open
+          {% else %}
+            Dicht
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'
+         friendly_name: 'Raam Fitness'                  
+
+   - platform: template
+     sensors:
+       verlichting_woning_status:
+         value_template: '{% if states.light.verlichting_huis %}
+          {% if states.light.verlichting_huis.state == "on" %}
+            Aan
+          {% else %}
+            Uit
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'
+         friendly_name: 'Verlichting woning'                     
