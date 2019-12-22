@@ -1,0 +1,14 @@
+#########################################################
+#                                                       #
+#     CONFIGURE LIGHTING WITH CIRCADIAN LIGHTING        #
+#                                                       #
+#########################################################
+circadian_lighting:
+
+switch:
+  - platform: circadian_lighting
+    min_brightness: 75
+    lights_ct:
+      - light.staande_lamp
+    lights_rgb:
+      - light.achterdebank
