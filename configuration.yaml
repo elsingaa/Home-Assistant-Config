@@ -17,11 +17,6 @@ http:
 
 logger:
    default: warning
-   logs:
-#        homeassistant.components.mqtt: debug
-        custom_components.circadian_lighting: debug
-        custom_components.circadian_lighting.sensor: debug
-        custom_components.circadian_lighting.switch: debug
 
 api:
 
