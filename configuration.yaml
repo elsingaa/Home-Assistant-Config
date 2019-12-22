@@ -3,15 +3,25 @@
 default_config:
 
 homeassistant:
-   packages: !include_dir_named packages
+        packages: !include_dir_named packages
+
+        latitude: !secret home_latitude
+        longitude: !secret home_longitude
+        elevation: !secret home_elevation
+        unit_system: metric
+        time_zone: "Europe/Amsterdam"
+        name: Home
 
 http:
         base_url: !secret homeassistant_baseurl 
 
 logger:
    default: warning
-#   logs:
+   logs:
 #        homeassistant.components.mqtt: debug
+        custom_components.circadian_lighting: debug
+        custom_components.circadian_lighting.sensor: debug
+        custom_components.circadian_lighting.switch: debug
 
 api:
 
