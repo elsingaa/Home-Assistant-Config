@@ -1,11 +1,13 @@
-# Live in Comfort
-I tried Home Assitant a couple of years ago, put it aside again, because then it wasn't there where I needed it to be.
+# Live in Comfort aka my Home Assistant Configuration
+I tried [Home Assistant](https://home-assistant.io/) a couple of years ago, put it aside again, because then it wasn't there where I needed it to be.
 Recently I reinstalled Home Assistant to integrate all the various systems I use for controlling our home.
 
 In an effort to document my configuration I created this repository.
 
+## Base
+The base of my smart home is a Z-Wave network, created by the ZWay board for Raspberry Pi. Sensors and switches are controlled then through a MQTT message bus. To create automation and a user interface I use Home Assistant, which is running on a virtual machine on VMware vSphere.
 
-## My components
+## My devices, services, and software I use
 
 Device | Quantity | More info | Image 
 --- | --- | --- | ---
@@ -49,7 +51,7 @@ MyFitnessPal | My own health
 ## Environment
 Kind | explanation
 --- | --- 
-LUftdaten | Air conditition
+Luftdaten | Air conditition
 
 
 
