@@ -70,3 +70,17 @@ sensor:
           n/a
           {% endif %}'
          friendly_name: 'Raam Fitness'                  
+
+   - platform: template
+     sensors:
+       verlichting_woning_status:
+         value_template: '{% if states.light.verlichting_huis %}
+          {% if states.light.verlichting_huis.state == "on" %}
+            Aan
+          {% else %}
+            Uit
+          {% endif %}
+          {% else %}
+          n/a
+          {% endif %}'
+         friendly_name: 'Verlichting woning'                     

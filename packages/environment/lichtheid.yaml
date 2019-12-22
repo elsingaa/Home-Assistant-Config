@@ -1,3 +1,8 @@
+#########################################################
+#                                                       #
+#              LIGHT INTENSITY SENSORS                  #
+#                                                       #
+#########################################################
 sensor:
   - platform: mqtt
     state_topic: 'homeassistant/sensor/keuken/keuken-Light'
