@@ -32,5 +32,3 @@ automation:
     service: frontend.set_theme
     data:
        name: darkcyan
-#      name: summer_breeze
-#      #  id: 7bbd8a0ba1ea47dfa5e4fa0fa4c55f88
