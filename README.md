@@ -6,7 +6,10 @@ In an effort to document my configuration I created this repository.
 
 ![Maintained](https://img.shields.io/maintenance/yes/2019?style=for-the-badge)
 ![Last commit](https://img.shields.io/github/last-commit/elsingaa/Home-Assistant-Config?style=for-the-badge)
-![](https://img.shields.io/github/issues-raw/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)![](https://img.shields.io/github/commit-activity/w/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
+![Open issues](https://img.shields.io/github/issues-raw/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
+![Commits](https://img.shields.io/github/commit-activity/w/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
+![Stars](https://img.shields.io/github/stars/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
+
 
 ## Table of Contents
 * [Base](#base)
