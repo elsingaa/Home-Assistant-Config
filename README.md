@@ -3,6 +3,29 @@ I tried [Home Assistant](https://home-assistant.io/) a couple of years ago, put 
 Recently I reinstalled Home Assistant to integrate all the various systems I use for controlling our home.
 
 In an effort to document my configuration I created this repository.
+![Maintained](https://img.shields.io/maintenance/yes/2019?style=for-the-badge)
+![Last commit](https://img.shields.io/github/last-commit/elsingaa/Home-Assistant-Config?style=for-the-badge)
+![](https://img.shields.io/github/issues-raw/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)![](https://img.shields.io/github/commit-activity/w/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
+
+## Table of Contents
+* [Base](#base)
+* [My devices, services, and software I use](#my-devices-services-and-software-i-use)
+    * Audio/video
+    * Network / Wireless
+    * Energy
+    * Health
+    * Environment
+    * Presence
+    * Heating
+    * Calendar
+    * Storage
+    * Computers
+    * Various
+
+
+
+
+
 
 ## Base
 The base of my smart home is a Z-Wave network, created by the ZWay board for Raspberry Pi. Sensors and switches are controlled then through a MQTT message bus. To create automation and a user interface I use Home Assistant, which is running on a virtual machine on VMware vSphere.
