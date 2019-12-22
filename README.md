@@ -41,6 +41,7 @@ Philips Hue lighting | |
 Ikea Tradfri | |
 
 [Table of Contents](#table-of-contents)
+
 ## Audio / Video
 
 Vendor | Device | |
@@ -50,12 +51,15 @@ Denon |  X2100W AVR | ![Denon X2100W AVR](www/images/README/denonx2100w.jpg)
 Plex | Plex |  ![Plex](www/images/README/plex.jpg)
 Spotify | Spotify | ![Spotify](www/images/README/spotify.png)
 Samsung | Samsung UE46D6200 | ![Spotify](www/images/README/samsung_ue46d6200.jpg) 
+
 [Table of Contents](#table-of-contents)
+
 ## Network / Wireless
 Kind | explanation
 --- | --- 
 Pi-Hole | Ad-blocker
 Unifi | Network & Wireless
+
 [Table of Contents](#table-of-contents)
 
 ## Energy
@@ -63,36 +67,44 @@ Kind | explanation
 --- | --- 
 PVOutput | Solar totals
 SolarEdge | Solar Panels
+
 [Table of Contents](#table-of-contents)
+
 ## Health
 Kind | explanation
 --- | --- 
 FitBit | Fitbit wife
 MyFitnessPal | My own health
+
 [Table of Contents](#table-of-contents)
+
 ## Environment
 Kind | explanation
 --- | --- 
 Luftdaten | Air conditition
-[Table of Contents](#table-of-contents)
 
+[Table of Contents](#table-of-contents)
 
 ## Presence
 Kind | explanation
 --- | --- 
 Owntracks |
 ESP32 | Home Bluetooth presence detection
+
 [Table of Contents](#table-of-contents)
+
 ## Heating
 Kind | explanation
 --- | --- 
 Alpha Innotec | Air-Water heatpump
+
 [Table of Contents](#table-of-contents)
 
 ## Calendar
 Kind | explanation
 --- | --- 
 Google Calendar |
+
 [Table of Contents](#table-of-contents)
 
 ## Storage
@@ -101,6 +113,7 @@ Kind | explanation
 Synology | Storage
 
 [Table of Contents](#table-of-contents)
+
 ## Various
 Kind | explanation
 --- | --- 
@@ -108,6 +121,7 @@ MQTT | Message bus
 BMW ConnectedDrive | Car information
 RDW | Information about our cars
 P2000 | Information about Ambulance/police/firebrigade
+
 [Table of Contents](#table-of-contents)
 
 ## Computers
@@ -115,4 +129,5 @@ Kind | explanation
 --- | --- 
 Raspberry Pi | Z-Way Z-Wave network
 Intel Nuc i5 (3x) | VMware cluster containing various items, including home automation items like Home Assistant
+
 [Table of Contents](#table-of-contents)
