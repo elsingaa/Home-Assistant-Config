@@ -7,7 +7,7 @@ circadian_lighting:
 
 switch:
   - platform: circadian_lighting
-    min_brightness: 75
+    min_brightness: 50
     lights_ct:
       - light.staande_lamp
     lights_rgb:
