@@ -7,6 +7,9 @@ scene:
 - id: '1574547534018'
   name: Naar bed
   entities:
+    light.erker:
+      state: on
+      brightness_pct: 100
     light.achterdebank:
       state: 'off'
     light.buiten_voordeur:
@@ -27,4 +30,61 @@ scene:
       state: 'off'
     media_player.samsung_tv_remote:
       state: 'off'
+    
 
+automation:
+- alias: TV op pauze
+  trigger:
+  - platform: state
+    entity_id: media_player.woonkamer
+    from: 'playing'
+    to: 'paused'
+  action:
+  - service: scene.create
+    data:
+      scene_id: before
+      snapshot_entities:
+      - light.staande_lamp
+      - light.tradfri_driver
+      - light.achterdebank
+      - light.erker
+  - service: light.turn_on
+    data:
+      entity_id: light.erker
+      brightness_pct: 100
+      
+  - service: light.turn_on
+    data:
+      entity_id: light.staande_lamp
+      brightness_pct: 80
+  - service: light.turn_on
+    data:
+      entity_id: light.tradfri_driver
+      brightness_pct: 80
+
+  - service: light.turn_on
+    data:
+      entity_id: light.achterdebank
+      brightness_pct: 80
+  - service: light.turn_on
+    data:
+      entity_id: light.erker
+      brightness_pct: 80
+
+
+- alias: playing again
+  trigger:
+  - platform: state
+    entity_id: media_player.woonkamer
+    from: 'paused'
+    to: 'playing'
+  condition: []
+  action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.before
+
+
+logger:
+  logs:
+    homeassistant.components.automation: debug
