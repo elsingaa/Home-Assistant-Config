@@ -1,0 +1,43 @@
+#########################################################
+#                                                       #
+#                     ERKER LIGHTS                      #
+#                                                       #
+#########################################################
+
+input_boolean:
+  erker_light_bool:
+    name: Erker_lights
+    initial: off
+    
+switch:
+  - platform: template
+    switches:
+      lights_erker_switch:
+        value_template: '{{ states("input_boolean.erker_light_bool") }}'
+        turn_on:
+        - service: input_boolean.turn_on
+          entity_id: input_boolean.erker_light_bool
+        turn_off:
+        - service: input_boolean.turn_off
+          entity_id: input_boolean.erker_light_bool
+
+automation:
+  - alias: 'Erker Lights on'
+    trigger:
+      - platform: state
+        entity_id: input_boolean.erker_light_bool
+        to: 'on'
+    action:
+      - service: script.turn_on
+        entity_id: script.erker_light_on
+
+  - alias: 'Erker Lights off'
+    trigger:
+      - platform: state
+        entity_id: input_boolean.erker_light_bool
+        to: 'off'
+    action:
+      - service: script.turn_on
+        entity_id: script.erker_light_off
+
+
