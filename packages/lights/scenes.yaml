@@ -85,6 +85,6 @@ automation:
       entity_id: scene.before
 
 
-logger:
-  logs:
-    homeassistant.components.automation: debug
+# logger:
+#   logs:
+#     homeassistant.components.automation: debug
