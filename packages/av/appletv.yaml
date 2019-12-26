@@ -3,8 +3,15 @@
 #               APPLE TV CONFIGURATION                  #
 #                                                       #
 #########################################################
-apple_tv_mrp:
-  - name: Woonkamer
-    host: !secret appletv_IP
-    port: !secret appletv_port
-    credentials: !secret appletv_credentials
+#apple_tv:
+#  - name: Woonkamer
+#    host: !secret appletv_IP
+#    port: !secret appletv_port
+#    credentials: !secret appletv_credentials
+#
+#
+homeassistant:
+  customize:
+    media_player.woonkamer_2:
+      name: "Woonkamer"
+      friendly_name: "Woonkamer"
