@@ -14,11 +14,6 @@ panel_iframe:
     url: 'http://huis.elsinga.local/?wpupg_grid=recipies-grid'
     icon: mdi:food-fork-drink
 
-  adblocker:
-    title: 'Advertentieblokker'
-    url: 'http://dns/admin'
-    icon: mdi:xbox-controller-view
-
   locaties:
     title: 'Lokaties'
     url: 'http://tracker.elsinga.local:8083/last/index.html'
