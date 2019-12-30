@@ -9,12 +9,21 @@ garbage_collection:
     frequency: "even-weeks"
     collection_days: thu
     exclude_dates:
+      - '2019-12-25'
       - '2019-12-26'
+      - '2020-01-01'
   - name: Milieuboer # Each week on Wednesday
     frequency: "weekly"
     collection_days: wed
     exclude_dates:
       - '2019-12-25'
+      - '2019-12-26'
+      - '2020-01-01'
+
   - name: Restafval
     frequency: "odd-weeks"
     collection_days: thu
+    exclude_dates:
+      - '2019-12-25'
+      - '2019-12-26'
+      - '2020-01-01'
