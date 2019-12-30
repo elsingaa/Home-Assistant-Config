@@ -1,0 +1,26 @@
+sensor:
+  - platform: buienradar
+    name: 'grootegast'
+    monitored_conditions:
+      - symbol
+      - humidity
+      - temperature
+      - windspeed
+      - pressure
+      - condition
+      - feeltemperature
+      - groundtemperature
+      - windforce
+      - winddirection
+      - visibility
+      - rainlast24hour
+      - rainlasthour
+      - temperature_1d
+      - mintemp_1d
+      - rainchance_1d
+      - sunchance_1d
+      - windforce_1d
+      - winddirection_1d
+      - condition_1d
+
+
