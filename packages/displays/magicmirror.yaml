@@ -3,6 +3,81 @@
 #      SETTINGS & CUSTOMIZATION FOR MAGIC MIRROR        #
 #                                                       #
 #########################################################
+switch:
+  - platform: mqtt
+    name: 'MagicMirror 01'
+    state_topic: 'homeassistant/switch/hal/magicMirror01'
+    command_topic: 'homeassistant/switch/hal/magicMirror01/set'
+    payload_on: 'on'
+    payload_off: 'off'
+    value_template:  '{{ value }}'
+
+automation:
+- alias: Turn off magic mirror at night
+  description: ''
+  trigger:
+  - at: '22:30'
+    platform: time
+  condition: 
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: 'input_boolean.magicmirror_power'
+      state: 'on'
+  action:
+  - alias: ''
+    data: {}
+    entity_id: switch.magicmirror_01
+    service: switch.turn_off
+
+- alias: Turn on magic mirror in the morning (workday)
+  description: ''
+  trigger:
+  - at: '06:30'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'on'
+    - condition: state
+      entity_id: 'input_boolean.magicmirror_power'
+      state: 'on'
+  action:
+  - alias: ''
+    data: {}
+    entity_id: switch.magicmirror_01
+    service: switch.turn_on
+
+- alias: Turn on magic mirror in the morning (non-workday)
+  description: ''
+  trigger:
+  - at: '08:30'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'off'
+    - condition: state
+      entity_id: 'input_boolean.magicmirror_power'
+      state: 'on'
+  action:
+  - alias: ''
+    data: {}
+    entity_id: switch.magicmirror_01
+    service: switch.turn_on
+
+
+input_boolean:
+  magicmirror_power:
+    name: Magic Mirror auto power
+    initial: on
+    
+
+
 sensor:
    - platform: template
      sensors:
