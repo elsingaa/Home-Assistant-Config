@@ -11,3 +11,11 @@ sensor:
     name: 'Temperatuur  keuken'
     unit_of_measurement: 'ºC'
     icon: mdi:thermometer
+
+sensor:
+  - platform: average
+    name: 'Slaapkamer temperatuur'    
+    entities:
+      - sensor.slaapkamer_sensor_deur_temperature
+      - sensor.slaapkamer_sensor_aj_temperature
+      - sensor.slaapkamer_sensor_tineke_temperature
