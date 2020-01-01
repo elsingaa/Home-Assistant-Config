@@ -1,0 +1,15 @@
+#########################################################
+#                                                       #
+#               CONFIGURE CHRISTMAS LIGHTS              #
+#                                                       #
+#########################################################
+light:
+  - platform: mqtt
+    name: 'Kerstboom2019'
+    state_topic: 'homeassistant/switch/woonkamer/kerstboom2019'
+    command_topic: 'homeassistant/switch/woonkamer/kerstboom2019/set'
+    
+    payload_on: 'on'
+    payload_off: 'off'
+    state_value_template: '{{ value }}'
+
