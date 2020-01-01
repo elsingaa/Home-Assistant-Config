@@ -1,0 +1,65 @@
+
+#
+# Random positive quotes, to brighten up the day!
+#
+# @link http://www.lifestalker.com/2017/04/four-word-quotes.html
+#
+sensor:
+- platform: template
+  sensors:
+    good_vibes:
+      friendly_name: Good Vibes
+      icon_template: mdi:emoticon-happy
+      entity_id:
+        - sensor.time
+      value_template: >-
+        {% set vibes = [
+          "Be great.",
+          "Be happy!",
+          "Be in the now.",
+          "Be the hero.",
+          "Begin anywhere.",
+          "Compliment someone today.",
+          "Do something great.",
+          "Don't worry, be happy.",
+          "Dream big dreams",
+          "Enjoy life!",
+          "Enjoy the little things.",
+          "Everybody loves you!",
+          "Follow your own star.",
+          "Grab life by the balls.",
+          "Hello gorgeous!",
+          "It's never too late.",
+          "Just go for it.",
+          "Just ship it.",
+          "Live with passion.",
+          "Love yourself.",
+          "Never doubt your instinct.",
+          "People envy you",
+          "People want to be you",
+          "Pick one thing and do it.",
+          "Ride like the wind.",
+          "Seize the day!",
+          "Start something.",
+          "Think big!",
+          "Think less. Feel more.",
+          "Work hard, stay humble.",
+          "You are a kind soul.",
+          "You are a winner!",
+          "You are an inspiration.",
+          "You are awesome!",
+          "You are fabulous!",
+          "You are the best!",
+          "You are the champion...",
+          "You are the most awesome!",
+          "You are your choices.",
+          "You can do great things!",
+          "You can move mountains",
+          "You live only once.",
+          "You look delicious!",
+          "You make people happy.",
+          "Your time is now.",
+        ] %}
+        {% set index = range(0, vibes|length - 1) | random %}
+
+        {{ vibes[index] }}
