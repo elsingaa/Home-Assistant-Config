@@ -4,12 +4,13 @@ Recently I reinstalled Home Assistant to integrate all the various systems I use
 
 In an effort to document my configuration I created this repository.
 
-![Maintained](https://img.shields.io/maintenance/yes/2019?style=for-the-badge)
+![Maintained](https://img.shields.io/maintenance/yes/2020?style=for-the-badge)
 ![Last commit](https://img.shields.io/github/last-commit/elsingaa/Home-Assistant-Config?style=for-the-badge)
 ![Open issues](https://img.shields.io/github/issues-raw/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
 ![Commits](https://img.shields.io/github/commit-activity/w/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
 
+Like a lot of folks I'm using the GitHub issues and project to keep track of bugs in my configuration and new features I want to make/use.
 
 ## Table of Contents
 * [Base](#base)
@@ -40,8 +41,8 @@ Aeotec Door/window sensor 7| 3 | | ![Aeotec Door/Window sensor](www/images/READM
 Aeotec multi Sensor| 3 | [Aeotec Multi Sensor ](https://aeotec.com/z-wave-sensor/) | ![Aeotec multisensor](www/images/README/aeotec-multisensor.jpg)
 EverSpring Z-Wave PIR Sensor SP814  | 1 | [EverSpring sensor](http://www.everspring.com/portfolio-item/sp814-lens-changeable-pir-detector/) | ![EverSpring PIR Sensor](www/images/README/everspring-sensor.jpg)
 Fibaro Wall Plug FGWPE-101 (Z-Wave)| 16 | [Fibaro wall plug](https://www.fibaro.com/en/products/wall-plug/) | ![Fibaro wall plug](www/images/README/fibaro-wallplug.jpg "Fibaro wall plug")
-Philips Hue lighting | |
-Ikea Tradfri | |
+Philips Hue lighting | (a lot) |[Philips Hue](https://meethue.com) | ![Philips Hue](www/images/README/philipshue.jpg)
+Ikea TRÅDFRI (aka Home smart) | 2 | [Ikea Smart Lighting](https://www.ikea.com/nl/en/cat/smart-lighting-36812/)| ![Ikea Tradfri](www/images/README/ikeatradfri.jpg)
 
 [Table of Contents](#table-of-contents)
 
@@ -58,10 +59,10 @@ Samsung | Samsung UE46D6200 | ![Spotify](www/images/README/samsung_ue46d6200.jpg
 [Table of Contents](#table-of-contents)
 
 ## Network / Wireless
-Kind | explanation
---- | --- 
-Pi-Hole | Ad-blocker
-Unifi | Network & Wireless
+Kind | explanation | |
+--- | --- | ---
+Pi-Hole | Ad-blocker | ![Pi-hole](www/images/README/pihole.jpg)
+Ubiquiti Unifi | Network & Wireless |![Ubiquiti Unifi](www/images/README/ubiquitiunifi.jpg)
 
 [Table of Contents](#table-of-contents)
 
@@ -74,10 +75,10 @@ SolarEdge | Solar Panels
 [Table of Contents](#table-of-contents)
 
 ## Health
-Kind | explanation
---- | --- 
-FitBit | Fitbit wife
-MyFitnessPal | My own health
+Kind | explanation | 
+--- | --- | ---
+FitBit | Health tracking 
+MyFitnessPal | Health tracking
 
 [Table of Contents](#table-of-contents)
 
