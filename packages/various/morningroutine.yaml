@@ -14,13 +14,13 @@ automation:
             {% set day_of_week = day[now().weekday()] %}
             {% set month = month[now().month - 1] %}
             Het is vandaag {{ day_of_week }} {{ now().day }} {{ month }}.          
-            Het is {{states('sensor.temperatuur_buiten')|round}} graden, het wordt waarschijnlijk  
+            De temperatuur is {{states('sensor.temperatuur_buiten')|round}} graden, het wordt waarschijnlijk  
             {{states('sensor.grootegast_temperature_1d') | round}} graden.
             {% if states.sensor.grootegast_ground_temperature.state | int < 4 %}
-            De temperatuur aan de grond is {{states('sensor.grootegast_ground_temperature')}} graden. Let op, het kan glad zijn.
+            Aan de grond is de temperatuur {{states('sensor.grootegast_ground_temperature')}} graden. Let op, het kan glad zijn.
             {% endif %}
-            De kans op regen is  {{states('sensor.grootegast_rainchance_1d')|round}} procent.
-            De windkracht is  windkracht {{states('sensor.grootegast_wind_force_1d')|round}}.
+            De kans op regen is {{states('sensor.grootegast_rainchance_1d')|round}} procent.
+            De windkracht is windkracht {{states('sensor.grootegast_wind_force_1d')|round}}.
             Het zicht is  
             {{states('sensor.grootegast_visibility')|round}} {{state_attr('sensor.grootegast_visibility','unit_of_measurement')}}
             
