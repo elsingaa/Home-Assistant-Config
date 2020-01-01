@@ -100,3 +100,8 @@ light:
       - light.verlichting_slaapkamer
       - light.buitenverlichting
 
+
+homeassistant:
+  customize:
+    light.buitenverlichting:
+      icon: mdi:coach-lamp
