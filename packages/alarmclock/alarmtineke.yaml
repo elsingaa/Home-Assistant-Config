@@ -1,0 +1,45 @@
+automation:
+- alias: Play Sonos in the morning (Tineke-werkdagen)
+  description: ''
+  trigger:
+  - at: '6:20'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'on'
+    - condition: state
+      entity_id: 'input_boolean.wekker_tineke_werkdagen'
+      state: 'on'
+  action:
+  - entity_id: media_player.slaapkamer
+    service: sonos.play_queue
+
+- alias: Play Sonos in the morning (Tineke-weekend)
+  description: ''
+  trigger:
+  - at: '8:00'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'off'
+    - condition: state
+      entity_id: 'input_boolean.wekker_tineke_weekend'
+      state: 'on'
+  action:
+  - entity_id: media_player.slaapkamer
+    service: sonos.play_queue
+
+input_boolean:
+  wekker_tineke_werkdagen:
+    name: Wekker Tineke werkdagen
+    initial: on
+
+  wekker_tineke_weekend:
+    name: Wekker Tineke weekend
+    initial: on
