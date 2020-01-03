@@ -7,7 +7,7 @@ automation:
 - alias: Turn on test light when there is movement
   trigger:
     platform: state
-    entity_id: binary_sensor.sensor_hal_motion
+    entity_id: binary_sensor.sensor_motion_hal
     to: 'on'
   condition:
     - condition: numeric_state
@@ -20,7 +20,7 @@ automation:
 - alias: Turn off test light 3 minutes after last movement
   trigger:
     platform: state
-    entity_id: binary_sensor.sensor_hal_motion
+    entity_id: binary_sensor.sensor_motion_hal
     to: 'off'
     for:
       minutes: 3

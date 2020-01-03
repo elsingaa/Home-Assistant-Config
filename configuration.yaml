@@ -24,4 +24,13 @@ discovery:
 
 config:
 
+binary_sensor:
+  - platform: huesensor
+device_tracker:
+  - platform: huesensor
+sensor:
+  - platform: huesensor
+
+
+automation: !include automations.yaml
 script: !include_dir_merge_named scripts
