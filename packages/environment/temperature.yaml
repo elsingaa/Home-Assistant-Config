@@ -12,7 +12,6 @@ sensor:
     unit_of_measurement: 'ºC'
     icon: mdi:thermometer
 
-sensor:
   - platform: average
     name: 'Slaapkamer temperatuur'    
     entities:
