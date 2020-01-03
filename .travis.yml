@@ -4,8 +4,8 @@ python:
 before_install:
   - mv .travis_secrets.yaml secrets.yaml
 install:
-  - pip3 install feedparser geopy
   - pip3 install homeassistant
+  - pip3 install feedparser geopy
   - hass --version
 script:
   - hass -c . --script check_config
