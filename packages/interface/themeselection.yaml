@@ -32,3 +32,10 @@ automation:
     service: frontend.set_theme
     data:
        name: darkcyan
+
+- alias: Set my light theme
+  trigger:
+  action:
+    service: frontend.set_theme
+    data:
+       name: mylight
