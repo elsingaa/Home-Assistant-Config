@@ -4,7 +4,7 @@
 #                                                       #
 #########################################################
 automation:
-- alias: Turn on test light when there is movement
+- alias: Turn on light in the hallway when there is movement
   trigger:
     platform: state
     entity_id: binary_sensor.sensor_motion_hal
@@ -17,7 +17,7 @@ automation:
     service: light.turn_on
     entity_id: light.overloop
 
-- alias: Turn off test light 3 minutes after last movement
+- alias: Turn off lights in the hallway 3 minutes after last movement
   trigger:
     platform: state
     entity_id: binary_sensor.sensor_motion_hal
