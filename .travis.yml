@@ -4,6 +4,7 @@ python:
 before_install:
   - mv .travis_secrets.yaml secrets.yaml
 install:
+  - pip3 install feedparser
   - pip3 install homeassistant
   - hass --version
 script:
