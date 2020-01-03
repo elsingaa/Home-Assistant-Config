@@ -6,6 +6,7 @@ before_install:
 install:
   - pip3 install homeassistant
   - pip3 install feedparser geopy
+  - pip3 install sqlalchemy
   - hass --version
 script:
   - hass -c . --script check_config
