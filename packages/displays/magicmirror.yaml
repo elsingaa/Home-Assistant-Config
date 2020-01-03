@@ -5,12 +5,17 @@
 #########################################################
 switch:
   - platform: mqtt
-    name: 'MagicMirror 01'
+    name: 'MagicMirror01'
     state_topic: 'homeassistant/switch/hal/magicMirror01'
     command_topic: 'homeassistant/switch/hal/magicMirror01/set'
     payload_on: 'on'
     payload_off: 'off'
     value_template:  '{{ value }}'
+
+input_boolean:
+  magicmirror_power:
+    name: Magic Mirror auto power
+    initial: on
 
 automation:
 - alias: Turn off magic mirror at night
@@ -27,7 +32,7 @@ automation:
   action:
   - alias: ''
     data: {}
-    entity_id: switch.magicmirror_01
+    entity_id: switch.magicmirror01
     service: switch.turn_off
 
 - alias: Turn on magic mirror in the morning (workday)
@@ -47,7 +52,7 @@ automation:
   action:
   - alias: ''
     data: {}
-    entity_id: switch.magicmirror_01
+    entity_id: switch.magicmirror01
     service: switch.turn_on
 
 - alias: Turn on magic mirror in the morning (non-workday)
@@ -67,17 +72,36 @@ automation:
   action:
   - alias: ''
     data: {}
-    entity_id: switch.magicmirror_01
+    entity_id: switch.magicmirror01
     service: switch.turn_on
 
 
-input_boolean:
-  magicmirror_power:
-    name: Magic Mirror auto power
-    initial: on
-    
+# Turn on magic mirror when movement occurs in the hallway    
+- alias: Turn on magic mirror when movement occurs in the hallway
+  trigger:
+    platform: state
+    entity_id: binary_sensor.sensor_motion_hal
+    to: 'on'
+  condition:
+    - condition: state
+      entity_id: 'input_boolean.magicmirror_power'
+      state: 'on'
+  action:
+    service: switch.turn_on
+    entity_id: switch.magicmirror01
 
+- alias: Turn off magic mirror 10 minutes after last movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.sensor_motion_hal
+    to: 'off'
+    for:
+      minutes: 10
+  action:
+    service: switch.turn_off
+    entity_id: switch.magicmirror01
 
+# Customized sensors for Magic Mirror
 sensor:
    - platform: template
      sensors:
