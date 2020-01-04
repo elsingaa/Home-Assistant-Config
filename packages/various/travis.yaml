@@ -1,0 +1,21 @@
+#########################################################
+#                                                       #
+#                TRAVIS-CI INTEGRATION                  #
+#                                                       #
+#########################################################
+sensor:
+  - platform: travisci
+    api_key: !secret travis_token
+
+homeassistant:
+  customize:
+    sensor.elsingaa_home_assistant_config_last_build_state:
+      friendly_name: Build state
+    sensor.elsingaa_home_assistant_config_last_build_duration:
+      friendly_name: Build duration
+    sensor.elsingaa_home_assistant_config_last_build_finished_at:
+      friendly_name: Build finished at
+    sensor.elsingaa_home_assistant_config_last_build_id:
+      friendly_name: Build ID
+    sensor.elsingaa_home_assistant_config_last_build_started_at:
+      friendly_name: Build started at
