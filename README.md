@@ -9,7 +9,7 @@ In an effort to document my configuration I created this repository.
 ![Open issues](https://img.shields.io/github/issues-raw/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
 ![Commits](https://img.shields.io/github/commit-activity/w/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
 ![Stars](https://img.shields.io/github/stars/elsingaa/Home-Assistant-Config?color=brightgreen&style=for-the-badge)
-![Build status](https://img.shields.io/travis/com/elsingaa/Home-Assistant-Config?style=for-the-badge)
+![Build status](https://img.shields.io/travis/elsingaa/Home-Assistant-Config?style=for-the-badge)
 
 Like a lot of folks I'm using the GitHub issues and project to keep track of bugs in my configuration and new features I want to make/use.
 
