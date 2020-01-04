@@ -4,38 +4,29 @@
 #                                                       #
 #########################################################
 automation:
-- alias: "Default Theme after Sunrise"
-  trigger:
-    platform: sun
-    event: sunrise
-    offset: "+00:00:00"
-  action:
-    - service: frontend.set_theme
-      data:
-        name: summer_breeze
-
-- alias: "dark Theme after Sunset"
-  trigger:
-    platform: sun
-    event: sunset
-    offset: "+00:00:00"
-  action:
-    - service: frontend.set_theme
-      data:
-        name: darkcyan
-
-- alias: Set theme at startup
-  trigger:
-  - platform: homeassistant
-    event: start
-  action:
-    service: frontend.set_theme
-    data:
-       name: darkcyan
-
 - alias: Set my light theme
   trigger:
   action:
     service: frontend.set_theme
     data:
        name: mylight
+
+- alias: 'Set HA theme for day and night'
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: sun.sun
+      to: above_horizon
+    - platform: state
+      entity_id: sun.sun
+      to: below_horizon
+  action:
+    - service_template: frontend.set_theme
+      data_template:
+        name: >
+          {% if states.sun.sun.state == "above_horizon" %}
+            summer_breeze
+          {% else %}
+            darkcyan
+          {% endif %}
