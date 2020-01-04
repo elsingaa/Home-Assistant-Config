@@ -33,5 +33,46 @@ automation:
     service: light.turn_off
     entity_id: light.overloop
 
+- alias: Turn on bedroom lights when movement in the bedroom
+  trigger:
+    platform: state
+    entity_id: 
+        -  binary_sensor.slaapkamer_sensor_motion_aj
+        -  binary_sensor.slaapkamer_sensor_motion_deur
+        -  binary_sensor.slaapkamer_sensor_motion_tineke
+    to: 'on'
+
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.slaapkamer_sensor_deur_light_level
+    below: 4
+    
+  action:
+  - service: timer.start
+    entity_id: timer.timer_slaapkamer
+  - service: scene.turn_on
+    entity_id: scene.slaapkamer_avond
+    data_template:
+      entity_id: >
+            {% if (float(as_timestamp(now())) > 22) and (float(as_timestamp(now())) < 5) %} # 23pm ~ 6am
+            scene.slaapkamer_orientatielicht
+            {% elif (float(as_timestamp(now())) > 4) and (float(as_timestamp(now())) < 22) %} # 5pm - 11pm
+            scene.slaapkamer_avond
+            {% else %}
+            scene.slaapkamer_overdag
+            {% endif %}        
+
+- alias: Turn off bedroom lights at end of timer
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+     entity_id: timer.timer_slaapkamer
+  action:
+   - service: light.turn_off
+     entity_id: light.slaapkamer
 
 
+timer:
+  timer_slaapkamer:
+    duration: '00:05:00'

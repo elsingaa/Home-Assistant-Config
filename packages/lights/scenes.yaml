@@ -54,7 +54,46 @@ scene:
       state: 'on'
     light.schilderij:
       state: 'on'
-  
+
+- name: slaapkamer_overdag
+  entities:
+    light.slaapkamer:
+      state: 'on'
+      brightness: 255
+      xy_color: [0.457, 0.41]
+
+    #  light.slaapkamer_achter_kast:
+    #    state: 'on'
+    #    brightness_pct: 100
+    #    xy_color: [0.457, 0.41]
+    #  light.nachtkastje_aj:
+    #    state: 'on'
+    #    brightness_pct: 100
+    #    xy_color: [0.457, 0.41]
+    #  light.nachtkastje_tineke:
+    #    state: 'on'
+    #    brightness_pct: 100
+    #    xy_color: [0.457, 0.41]
+    #  light.bed_kant_anne_jan:
+    #    state: 'on'
+    #    brightness_pct: 100
+    #    xy_color: [0.457, 0.41]
+
+
+- name: slaapkamer_orientatielicht
+  entities:
+    light.slaapkamer:
+      state: 'on'
+      brightness: 1
+      xy_color: [0.561, 0.404]
+
+- name: slaapkamer_avond
+  entities:
+    light.slaapkamer:
+      state: 'on'
+      brightness: 77
+      xy_color: [0.457, 0.41]
+
 
 # automation:
 # - alias: TV op pauze
