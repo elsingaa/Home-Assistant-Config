@@ -33,17 +33,6 @@ scene:
     light.kerstboom2019:
       state: 'off'    
 
-  # - name: Lezen
-  #   entities:
-  #     light.tradfri_driver: 
-  #       state: 'on'
-  #     light.achterdebank:
-  #       state: 'on'
-  #     light.staande_lamp:
-  #       state: 'on'
-  #     light.schilderij:
-  #       state: 'on'
-
 - name: Gezellig
   entities:
     light.tradfri_driver: 
