@@ -45,7 +45,7 @@ automation:
   condition:
   - condition: numeric_state
     entity_id: sensor.slaapkamer_sensor_deur_light_level
-    below: 4
+    below: 3
     
   action:
   - service: timer.start
