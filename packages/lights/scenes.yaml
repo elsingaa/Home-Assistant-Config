@@ -62,24 +62,6 @@ scene:
       brightness: 255
       xy_color: [0.457, 0.41]
 
-    #  light.slaapkamer_achter_kast:
-    #    state: 'on'
-    #    brightness_pct: 100
-    #    xy_color: [0.457, 0.41]
-    #  light.nachtkastje_aj:
-    #    state: 'on'
-    #    brightness_pct: 100
-    #    xy_color: [0.457, 0.41]
-    #  light.nachtkastje_tineke:
-    #    state: 'on'
-    #    brightness_pct: 100
-    #    xy_color: [0.457, 0.41]
-    #  light.bed_kant_anne_jan:
-    #    state: 'on'
-    #    brightness_pct: 100
-    #    xy_color: [0.457, 0.41]
-
-
 - name: slaapkamer_orientatielicht
   entities:
     light.slaapkamer:
@@ -146,8 +128,3 @@ scene:
 #   - service: scene.turn_on
 #     data:
 #       entity_id: scene.before
-
-
-# logger:
-#   logs:
-#     homeassistant.components.automation: debug
