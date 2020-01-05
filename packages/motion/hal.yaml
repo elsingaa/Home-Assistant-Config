@@ -14,16 +14,22 @@ automation:
       entity_id: sensor.sensor_hal_light_level
       below: 5
   action:
-    service: light.turn_on
+  - service: timer.start
+    entity_id: timer.timer_hal
+  - service: light.turn_on
     entity_id: light.overloop
 
 - alias: Turn off lights in the hallway 3 minutes after last movement
   trigger:
-    platform: state
-    entity_id: binary_sensor.sensor_motion_hal
-    to: 'off'
-    for:
-      minutes: 3
+  - platform: event
+    event_type: timer.finished
+    event_data:
+     entity_id: timer.timer_hal
   action:
-    service: light.turn_off
+  - service: light.turn_off
     entity_id: light.overloop    
+
+
+timer:
+  timer_hal:
+    duration: '00:03:00'
