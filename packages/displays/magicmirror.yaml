@@ -87,19 +87,25 @@ automation:
       entity_id: 'input_boolean.magicmirror_power'
       state: 'on'
   action:
-    service: switch.turn_on
+  - service: timer.start
+    entity_id: timer.timer_magicmirror01
+ 
+  - service: switch.turn_on
     entity_id: switch.magicmirror01
 
 - alias: Turn off magic mirror 10 minutes after last movement
   trigger:
-    platform: state
-    entity_id: binary_sensor.sensor_motion_hal
-    to: 'off'
-    for:
-      minutes: 10
+  - platform: event
+    event_type: timer.finished
+    event_data:
+     entity_id: timer.timer_magicmirror01
   action:
     service: switch.turn_off
     entity_id: switch.magicmirror01
+
+timer:
+  timer_magicmirror01:
+    duration: '00:10:00'
 
 # Customized sensors for Magic Mirror
 sensor:
@@ -147,6 +153,20 @@ sensor:
 
    - platform: template
      sensors:
+       locatie_aj_full:
+         value_template: "{{ state_attr('sensor.locatie_aj','street') }} {{ state_attr('sensor.locatie_aj','street_number')}} {{ state_attr('sensor.locatie_aj','postal_town') }} ({{ state_attr('sensor.locatie_aj','state_province') }})"
+
+         friendly_name: 'Locatie AJ'
+ 
+   - platform: template
+     sensors:
+       locatie_tineke_full:
+         value_template: "{{ state_attr('sensor.locatie_tineke','street') }} {{ state_attr('sensor.locatie_tineke','street_number')}} {{ state_attr('sensor.locatie_tineke','postal_town') }} ({{ state_attr('sensor.locatie_tineke','state_province') }})"
+
+         friendly_name: 'Locatie Tineke'
+                    
+   - platform: template
+     sensors:
        verlichting_woning_status:
          value_template: '{% if states.light.verlichting_huis %}
           {% if states.light.verlichting_huis.state == "on" %}
@@ -157,4 +177,4 @@ sensor:
           {% else %}
           n/a
           {% endif %}'
-         friendly_name: 'Verlichting woning'                     
+         friendly_name: 'Verlichting woning'

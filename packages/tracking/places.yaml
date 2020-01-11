@@ -1,0 +1,18 @@
+sensor places_aj:
+  - platform: places
+    name: locatie_AJ
+    devicetracker_id: device_tracker.neweden
+    options: zone,place
+    map_provider: google
+    map_zoom: 19
+    home_zone: zone.home
+    api_key: !secret places_api
+
+  - platform: places
+    name: locatie_Tineke
+    devicetracker_id: device_tracker.iphonetineke
+    options: zone,place
+    map_provider: google
+    map_zoom: 19
+    home_zone: zone.home
+    api_key: !secret places_api

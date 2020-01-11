@@ -1,0 +1,5 @@
+device_tracker:
+  - platform: icloud
+    username: !secret icloud_user
+    password: !secret icloud_password
+    account_name: icloud_elsinga
