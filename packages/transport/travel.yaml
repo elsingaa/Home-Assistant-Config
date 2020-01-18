@@ -5,8 +5,7 @@
 #########################################################
 sensor:
   - platform: here_travel_time
-    app_id: !secret here_appid
-    app_code: !secret here_appcode
+    api_key: !secret here_apikey
     origin_entity_id: person.anne_jan_elsinga
     destination_entity_id: zone.home
     scan_interval: 600
@@ -14,8 +13,7 @@ sensor:
     name: "Reistijd AJ"
 
   - platform: here_travel_time
-    app_id: !secret here_appid
-    app_code: !secret here_appcode
+    api_key: !secret here_apikey
     origin_entity_id: person.tineke
     destination_entity_id: zone.home
     scan_interval: 600
@@ -23,8 +21,7 @@ sensor:
     name: "Reistijd Tineke"
 
   - platform: here_travel_time
-    app_id: !secret here_appid
-    app_code: !secret here_appcode
+    api_key: !secret here_apikey
     origin_entity_id: zone.home
     destination_latitude: "52.063557"
     destination_longitude: "5.257632"
@@ -33,8 +30,7 @@ sensor:
 
 
   - platform: here_travel_time
-    app_id: !secret here_appid
-    app_code: !secret here_appcode
+    api_key: !secret here_apikey
     origin_entity_id: zone.home
     destination_latitude: "53.211672"
     destination_longitude: "6.560674"
@@ -42,8 +38,7 @@ sensor:
     name: "DUO Cascade"
 
   - platform: here_travel_time
-    app_id: !secret here_appid
-    app_code: !secret here_appcode
+    api_key: !secret here_apikey
     origin_entity_id: zone.home
     destination_latitude: "53.2046"
     destination_longitude: "6.58042"
@@ -52,8 +47,7 @@ sensor:
 
 
   - platform: here_travel_time
-    app_id: !secret here_appid
-    app_code: !secret here_appcode
+    api_key: !secret here_apikey
     origin_entity_id: zone.home
     destination_latitude: "52.0819"
     destination_longitude: "4.32555"
