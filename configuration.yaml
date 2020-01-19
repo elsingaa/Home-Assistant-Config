@@ -20,6 +20,9 @@ logger:
 
 api:
 
+recorder:
+  db_url: !secret mysql_server
+
 discovery:
 
 config:
