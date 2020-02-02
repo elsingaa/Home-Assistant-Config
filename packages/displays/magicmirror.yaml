@@ -13,78 +13,78 @@ switch:
     value_template:  '{{ value }}'
 
 input_boolean:
-  magicmirror_power:
-    name: Magic Mirror auto power
+  override_magicmirror_power:
+    name: Magic Mirror override
     initial: on
 
 automation:
-- alias: Turn off magic mirror at night
-  description: ''
-  trigger:
-  - at: '22:30'
-    platform: time
-  condition: 
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: 'input_boolean.magicmirror_power'
-      state: 'on'
-  action:
-  - alias: ''
-    data: {}
-    entity_id: switch.magicmirror01
-    service: switch.turn_off
+#- alias: Turn off magic mirror at night
+#  description: ''
+#  trigger:
+#  - at: '22:30'
+#    platform: time
+#  condition: 
+#    condition: and
+#    conditions:
+#    - condition: state
+#      entity_id: 'input_boolean.magicmirror_power'
+#      state: 'on'
+#  action:
+#  - alias: ''
+#    data: {}
+#    entity_id: switch.magicmirror01
+#    service: switch.turn_off
 
-- alias: Turn on magic mirror in the morning (workday)
-  description: ''
-  trigger:
-  - at: '06:30'
-    platform: time
-  condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: 'binary_sensor.workday_sensor'
-      state: 'on'
-    - condition: state
-      entity_id: 'input_boolean.magicmirror_power'
-      state: 'on'
-  action:
-  - alias: ''
-    data: {}
-    entity_id: switch.magicmirror01
-    service: switch.turn_on
+#- alias: Turn on magic mirror in the morning (workday)
+#  description: ''
+#  trigger:
+#  - at: '06:30'
+#    platform: time
+#  condition:
+#    condition: and
+#    conditions:
+#    - condition: state
+#      entity_id: 'binary_sensor.workday_sensor'
+#      state: 'on'
+#    - condition: state
+#      entity_id: 'input_boolean.magicmirror_power'
+#      state: 'on'
+#  action:
+#  - alias: ''
+#    data: {}
+#    entity_id: switch.magicmirror01
+#    service: switch.turn_on
 
-- alias: Turn on magic mirror in the morning (non-workday)
-  description: ''
-  trigger:
-  - at: '08:30'
-    platform: time
-  condition:
-    condition: and
-    conditions:
-    - condition: state
-      entity_id: 'binary_sensor.workday_sensor'
-      state: 'off'
-    - condition: state
-      entity_id: 'input_boolean.magicmirror_power'
-      state: 'on'
-  action:
-  - alias: ''
-    data: {}
-    entity_id: switch.magicmirror01
-    service: switch.turn_on
+#- alias: Turn on magic mirror in the morning (non-workday)
+#  description: ''
+#  trigger:
+#  - at: '08:30'
+#    platform: time
+#  condition:
+#    condition: and
+#    conditions:
+#    - condition: state
+#      entity_id: 'binary_sensor.workday_sensor'
+#      state: 'off'
+#    - condition: state
+#      entity_id: 'input_boolean.magicmirror_power'
+#      state: 'on'
+#  action:
+#  - alias: ''
+#    data: {}
+#    entity_id: switch.magicmirror01
+#    service: switch.turn_on
 
 
 # Turn on magic mirror when movement occurs in the hallway    
 - alias: Turn on magic mirror when movement occurs in the hallway
   trigger:
     platform: state
-    entity_id: binary_sensor.sensor_motion_hal
+    entity_id: binary_sensor.sensor_hal_motion
     to: 'on'
   condition:
     - condition: state
-      entity_id: 'input_boolean.magicmirror_power'
+      entity_id: input_boolean.override_magicmirror_power
       state: 'on'
   action:
   - service: timer.start
