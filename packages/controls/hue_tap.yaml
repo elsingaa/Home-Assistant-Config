@@ -18,9 +18,9 @@ automation:
     - platform: state
       entity_id: sensor.slaapkamer_schakelaar
       to: "2_click"
-    - platform: state
-      entity_id: sensor.slaapkamer_schakelaar
-      to: "3_click"
+#    - platform: state
+#      entity_id: sensor.slaapkamer_schakelaar
+#      to: "3_click"
     - platform: state
       entity_id: sensor.slaapkamer_schakelaar
       to: "4_click"
@@ -39,4 +39,16 @@ automation:
             scene.slaapkamer_overdag
           {% endif %}
   - service: timer.cancel
+    entity_id: timer.timer_slaapkamer
+
+- alias: "Select scenes when buton 3 pressed"
+  trigger:
+    - platform: state
+      entity_id: sensor.slaapkamer_schakelaar
+      to: "3_click"
+  condition: []
+  action:
+  - service: scene.turn_on
+    entity_id: scene.slaapkamer_avond
+  - service: timer.start
     entity_id: timer.timer_slaapkamer
