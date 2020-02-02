@@ -1,0 +1,29 @@
+automation:
+- alias: at sun set turn on the lamps outside
+  description: ''
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - entity_id: light.buiten_voordeur
+    service: light.turn_off
+  - entity_id: light.lamp_achtergevel
+    service: light.turn_off
+  - entity_id: light.lamp_zijgevel
+    service: light.turn_off
+
+- alias: at sun rise turn off the lamps outside
+  description: ''
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition: []
+  action:
+  - entity_id: light.buiten_voordeur
+    service: light.turn_off
+  - entity_id: light.lamp_achtergevel
+    service: light.turn_off
+  - entity_id: light.lamp_zijgevel
+    service: light.turn_off
+  
