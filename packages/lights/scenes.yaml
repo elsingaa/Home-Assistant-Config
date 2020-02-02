@@ -12,12 +12,6 @@ scene:
       brightness_pct: 100
     light.achterdebank:
       state: 'off'
-    light.buiten_voordeur:
-      state: 'off'
-    light.lamp_achtergevel:
-      state: 'off'
-    light.lamp_zijgevel:
-      state: 'off'
     light.overloop:
       state: 'on'
     light.philipslamp:
