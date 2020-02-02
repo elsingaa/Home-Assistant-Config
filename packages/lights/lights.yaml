@@ -52,6 +52,13 @@ light:
     payload_off: 'off'
     state_value_template: '{{ value }}'
 
+  - platform: mqtt
+    name: 'Bureaulamp Tineke'
+    state_topic: 'homeassistant/switch/werkkamer/bureaulampTineke'
+    command_topic: 'homeassistant/switch/werkkamer/bureaulampTineke/set'
+    payload_on: 'on'
+    payload_off: 'off'
+    state_value_template: '{{ value }}'
 
   - platform: group
     name: buitenverlichting
@@ -105,3 +112,36 @@ homeassistant:
   customize:
     light.buitenverlichting:
       icon: mdi:coach-lamp
+
+automation: 
+- alias: at sun set turn on the lamp in the living room
+  description: ''
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - device_id: c115d99ce425428393a580370cea848c
+    domain: light
+    entity_id: light.staande_lamp
+    type: turn_on
+  - device_id: a16aee5d5b0c44b79d01f781dc28718e
+    domain: light
+    entity_id: light.tradfri_driver
+    type: turn_on
+
+- alias: at sun rise turn off the lamp in the living room
+  description: ''
+  trigger:
+  - event: sunrise
+    platform: sun
+  condition: []
+  action:
+  - device_id: c115d99ce425428393a580370cea848c
+    domain: light
+    entity_id: light.staande_lamp
+    type: turn_off
+  - device_id: a16aee5d5b0c44b79d01f781dc28718e
+    domain: light
+    entity_id: light.tradfri_driver
+    type: turn_off
