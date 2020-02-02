@@ -34,4 +34,6 @@ automation:
   action:
     - service: light.turn_on
       entity_id: light.Woonkamer_verlichting
+    - service: light.turn_on
+      entity_id: light.achterdebank
 
