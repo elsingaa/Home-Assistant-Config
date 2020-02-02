@@ -1,0 +1,20 @@
+- id: '1580575473548'
+  alias: turn on the lights in woonkamer when the sun is set
+  description: ''
+  trigger:
+  - event: sunset
+    platform: sun
+  condition: []
+  action:
+  - device_id: c115d99ce425428393a580370cea848c
+    domain: light
+    entity_id: light.staande_lamp
+    type: turn_on
+  - device_id: a16aee5d5b0c44b79d01f781dc28718e
+    domain: light
+    entity_id: light.tradfri_driver
+    type: turn_on
+  - device_id: 8d15223797554c19846e5d5b7164de8b
+    domain: light
+    entity_id: light.achterdebank
+    type: turn_on
