@@ -48,7 +48,7 @@ homeassistant:
 
 group:
   battery_alert:
-    control: hidden
+    #control: hidden
     entities:
       - automation.battery_alert
       - automation.battery_alert_clear
