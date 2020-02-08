@@ -1,0 +1,13 @@
+#########################################################
+#                                                       #
+#              WINDOW OPEN/CLOSED SENSORS               #
+#                                                       #
+#########################################################
+binary_sensor:
+   - platform: mqtt
+     name: Deur Woonkamer
+     state_topic: "homeassistant/sensor/woonkamer/woonkamerDeur"
+     value_template: "{{ value }}"
+     payload_on: "on"
+     payload_off: "off"
+     device_class: door
