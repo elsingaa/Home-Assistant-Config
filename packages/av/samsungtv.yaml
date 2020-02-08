@@ -4,11 +4,6 @@
 #                                                       #
 #########################################################
 
-media_player:
-  - platform: samsungtv
-    host: !secret samsungtv_IP
-    mac: !secret samsungtv_mac
-
 automation:
   id: '1577895200056'
   alias: Turn on received when TV turns on
