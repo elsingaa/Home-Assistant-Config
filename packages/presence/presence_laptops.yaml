@@ -1,0 +1,20 @@
+#########################################################
+#                                                       #
+#         PRESENCE DETECTION BASED ON BLUETHOOTH        #
+#                                                       #
+#########################################################
+binary_sensor:
+   - platform: mqtt
+     name: macbookaj
+     state_topic: "homeassistant/presence/macbookaj"
+     payload_on: "wake"
+     payload_off: "sleep"
+     device_class: connectivity
+
+   - platform: mqtt
+     name: macbooktineke
+     state_topic: "homeassistant/presence/macbooktineke"
+     payload_on: "wake"
+     payload_off: "sleep"
+     device_class: connectivity
+

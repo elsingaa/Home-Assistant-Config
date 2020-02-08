@@ -18,3 +18,28 @@
     domain: light
     entity_id: light.achterdebank
     type: turn_on
+- id: '1580676841533'
+  alias: Naar bed
+  description: Turn things of when going to bed
+  trigger: []
+  condition: []
+  action:
+  - scene: scene.naar_bed
+  - delay: 00:01:00
+  - device_id: 1cdd7b07c0b64ebbaf72da61411445a7
+    domain: light
+    entity_id: light.erker
+    type: turn_off
+- id: '1580850032738'
+  alias: New Automation
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.macbooktineke
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - data: {}
+    entity_id: light.bureaulamp_tineke
+    service: light.turn_on
