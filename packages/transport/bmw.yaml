@@ -14,6 +14,10 @@ sensor:
     sensors:
         320d_brake_fluid_date:
                 value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["brake fluid date"] }}'
+        320d_brake_fluid_status:
+                value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["brake fluid status"] }}'
+        320d_oil_change_status: 
+                value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["oil status"] }}'
         320d_oil_change_date:
                 value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["oil date"] }}'
         320d_oil_change_distance:
@@ -22,4 +26,6 @@ sensor:
                 value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["vehicle check date"] }}'
         320d_vehicklecheck_distance:
                 value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["vehicle check distance"] }}'
+        320d_vehiclecheck_status:
+                value_template: '{{ states.binary_sensor["320d_condition_based_services"].attributes["vehicle check status"] }}'
 
