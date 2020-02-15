@@ -7,7 +7,7 @@ automation:
 - alias: "Select scenes when buton pressed"
   trigger:
     - platform: state
-      entity_id: sensor.slaapkamer_schakelaar
+      entity_id: remote.slaapkamer_schakelaar
       to: "1_click"
   action:
     - service: light.turn_off
@@ -16,26 +16,26 @@ automation:
 - alias: "Select scenes when buton pressed"
   trigger:
     - platform: state
-      entity_id: sensor.slaapkamer_schakelaar
+      entity_id: remote.slaapkamer_schakelaar
       to: "2_click"
 #    - platform: state
 #      entity_id: sensor.slaapkamer_schakelaar
 #      to: "3_click"
     - platform: state
-      entity_id: sensor.slaapkamer_schakelaar
+      entity_id: remote.slaapkamer_schakelaar
       to: "4_click"
   condition: []
   action:
   - service: scene.turn_on
     data_template:
       entity_id: >
-          {% if states.sensor.slaapkamer_schakelaar.state == "1_click" %}
+          {% if states.remote.slaapkamer_schakelaar.state == "1_click" %}
             scene.slaapkamer_avond
-          {% elif states.sensor.slaapkamer_schakelaar.state == "2_click" %}
+          {% elif states.remote.slaapkamer_schakelaar.state == "2_click" %}
             scene.slaapkamer_orientatielicht
-          {% elif states.sensor.slaapkamer_schakelaar.state == "3_click" %}
+          {% elif states.remote.slaapkamer_schakelaar.state == "3_click" %}
             scene.slaapkamer_avond
-          {% elif states.sensor.slaapkamer_schakelaar.state == "4_click" %}
+          {% elif states.remote.slaapkamer_schakelaar.state == "4_click" %}
             scene.slaapkamer_overdag
           {% endif %}
   - service: timer.cancel
@@ -44,7 +44,7 @@ automation:
 - alias: "Select scenes when buton 3 pressed"
   trigger:
     - platform: state
-      entity_id: sensor.slaapkamer_schakelaar
+      entity_id: remote.slaapkamer_schakelaar
       to: "3_click"
   condition: []
   action:
