@@ -9,7 +9,7 @@ automation:
   alias: Turn on received when TV turns on
   description: ''
   trigger:
-  - entity_id: media_player.samsung_tv_remote
+  - entity_id: media_player.ue46d6200_ue46d6200
     platform: state
     to: 'on'
   condition: []
