@@ -22,8 +22,6 @@ scene:
       state: 'off'
     media_player.denon_avr_x2100w:
       state: 'off'
-    media_player.samsung_tv_remote:
-      state: 'off'
     light.kerstboom2019:
       state: 'off'    
 
