@@ -34,6 +34,7 @@ device_tracker:
 remote:
   - platform: huesensor
 
+uilogs:
 
 automation: !include automations.yaml
 script: !include_dir_merge_named scripts
