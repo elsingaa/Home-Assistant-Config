@@ -1,0 +1,18 @@
+# Example configuration.yaml entry
+sensor:
+- platform: nederlandse_spoorwegen
+  api_key: NS_API_KEY
+  routes:
+    - name: Grijpskerk-Leeuwarden
+      from: Gk
+      to: Lw
+    - name: Leeuwarden-Grijpskerk
+      from: Lw
+      to: Gk
+
+
+logger:
+    logs:
+      custom_components.nederlandse_spoorwegen: debug
+      custom_components.sensor.nederlandse_spoorwegen: debug
+
