@@ -29,20 +29,20 @@ automation:
   - service: light.turn_off
     entity_id: light.overloop    
 
-- alias: Turn lights on in living room when it is dark and motion occurs in hallway and it is dark 
-  trigger:
-    platform: state
-    entity_id: binary_sensor.sensor_motion_hal
-    to: 'on'
-  condition:
-    - condition: numeric_state
-      entity_id: sensor.sensor_hal_light_level
-      below: 5
-  action:
-  - service: light.turn_on
-    entity_id: light.Woonkamer_verlichting
-  - service: light.turn_on
-    entity_id: light.achterdebank
+#- alias: Turn lights on in living room when it is dark and motion occurs in hallway and it is dark 
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.sensor_motion_hal
+#    to: 'on'
+#  condition:
+#    - condition: numeric_state
+#      entity_id: sensor.sensor_hal_light_level
+#      below: 3
+#  action:
+#  - service: light.turn_on
+#    entity_id: light.Woonkamer_verlichting
+#  - service: light.turn_on
+#    entity_id: light.achterdebank
 
 
 
