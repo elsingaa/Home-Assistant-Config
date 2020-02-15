@@ -31,7 +31,7 @@
     entity_id: light.erker
     type: turn_off
 - id: '1580850032738'
-  alias: New Automation
+  alias: turn on light when macbook tineke comes from screen saver
   description: ''
   trigger:
   - entity_id: binary_sensor.macbooktineke
@@ -42,4 +42,29 @@
   action:
   - data: {}
     entity_id: light.bureaulamp_tineke
+    service: light.turn_on
+- id: '1581155917396'
+  alias: Update location
+  description: ''
+  trigger: []
+  condition: []
+  action:
+  - data: {}
+    service: device_tracker.see
+- id: '1581159296389'
+  alias: Deur open in woonkamer
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.deur_woonkamer
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - below: '5'
+    condition: numeric_state
+    entity_id: sensor.sensor_hal_light_level
+  action:
+  - entity_id: timer.timer_hal
+    service: timer.start
+  - entity_id: light.overloop
     service: light.turn_on
