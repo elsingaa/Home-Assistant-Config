@@ -1,15 +1,14 @@
 """
-Sensor for checking the status of Hue sensors.
-
-For more details about this platform, please refer to the documentation at
-https://home-assistant.io/components/sensor.hue/
+Device tracking with the Hue app.
 """
 import asyncio
 import logging
 from datetime import timedelta
 
 import async_timeout
+
 import homeassistant.util.dt as dt_util
+from homeassistant.components import zone
 from homeassistant.components.device_tracker import PLATFORM_SCHEMA
 from homeassistant.components.device_tracker.const import (
     ATTR_ATTRIBUTES,
@@ -27,38 +26,14 @@ from homeassistant.const import (
 )
 from homeassistant.helpers.event import async_track_time_interval
 from homeassistant.util import slugify
-from homeassistant.components import zone
 
+from . import get_bridges, update_api
 
-DEPENDENCIES = ["hue"]
 
 _LOGGER = logging.getLogger(__name__)
 
 TYPE_GEOFENCE = "Geofence"
 DEFAULT_SCAN_INTERVAL = timedelta(seconds=30)
-
-
-def get_bridges(hass):
-    from homeassistant.components import hue
-    from homeassistant.components.hue.bridge import HueBridge
-
-    return [
-        entry
-        for entry in hass.data[hue.DOMAIN].values()
-        if isinstance(entry, HueBridge) and entry.api
-    ]
-
-
-async def update_api(api):
-    import aiohue
-
-    try:
-        with async_timeout.timeout(10):
-            await api.update()
-    except (asyncio.TimeoutError, aiohue.AiohueException) as err:
-        _LOGGER.debug("Failed to fetch sensors: %s", err)
-        return False
-    return True
 
 
 async def async_setup_scanner(hass, config, async_see, discovery_info=None):
