@@ -3,6 +3,12 @@
 #             MOTION RESPONSE IN THE BEDROOM            #
 #                                                       #
 #########################################################
+#
+input_boolean:
+  override_hal_beweging:
+    name: Beweging in de hal
+    initial: on
+
 automation:
 - alias: Turn on hallway light when there is movement on door sensor
   trigger:
@@ -13,10 +19,12 @@ automation:
     - condition: numeric_state
       entity_id: sensor.sensor_hal_light_level
       below: 5
-
+    - condition: state
+      entity_id: input_boolean.override_hal_beweging
+      state: 'on'
     - condition: time
       after: '06:00:00'
-      before: '22:45:00'
+      before: '22:30:00'
 
   action:
     service: light.turn_on
@@ -54,9 +62,9 @@ automation:
  #   entity_id: scene.slaapkamer_avond
     data_template:
       entity_id: >
-        {% if (now().hour > 21 ) or (now().hour < 5 ) %}
+        {% if (now().hour > 22 ) or (now().hour < 5 ) %}
         scene.slaapkamer_orientatielicht
-        {% elif (now().hour > 4 ) or (now().hour < 21 ) %}
+        {% elif (now().hour > 4 ) or (now().hour < 22 ) %}
         scene.slaapkamer_avond
         {% else %}
         scene.slaapkamer_overdag
