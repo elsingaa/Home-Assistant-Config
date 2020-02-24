@@ -11,6 +11,20 @@ serie:
       entity_id: media_player.denon_x2100w
       volume_level: 0.4
     service: media_player.volume_set
+volumeplus:
+  sequence:
+  - data_template:
+      entity_id: media_player.denon_x2100w
+      volume_level: '{{ states.media_player.denon_x2100w.attributes.volume_level | float + 0.025 }}'
+    service: media_player.volume_set
+
+volumemin:
+  sequence:
+  - data_template:
+      entity_id: media_player.denon_x2100w
+      volume_level: '{{ states.media_player.denon_x2100w.attributes.volume_level | float - 0.025 }}'
+    service: media_player.volume_set
+
 ochtendplaylist:
   sequence:
   - data:
@@ -63,4 +77,4 @@ sonos_morning_radio:
       entity_id: media_player.slaapkamer
       source: Bedroom Jams
     entity_id: media_player.slaapkamer
-    service: media_player.select_source      
+    service: media_player.select_source
