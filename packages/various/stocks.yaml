@@ -1,0 +1,11 @@
+sensor:
+  - platform: alpha_vantage
+    api_key: !secret alphavantage_key
+    symbols:
+      - symbol: VMW
+        name: VMware
+
+  - platform: template
+    sensors: 
+       vmware_rounded:
+         value_template: "{{ states('sensor.vmware') | round(1) }}"
