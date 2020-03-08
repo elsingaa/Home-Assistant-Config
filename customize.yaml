@@ -1,0 +1,20 @@
+sensor.vmware_rounded:
+  friendly_name: VMware
+light.philipslamp:
+  friendly_name: Keuken
+sensor.luftdaten_10805_p2:
+  friendly_name: PM2.5
+sensor.luftdaten_10805_p1:
+  friendly_name: PM10
+sensor.grootegast_condition:
+  friendly_name: Weer
+sensor.grootegast_humidity:
+  friendly_name: Luchtvochtigheid
+sensor.grootegast_pressure:
+  friendly_name: Luchtdruk
+person.anne_jan_elsinga:
+  entity_picture: /local/images/annejan.jpg
+person.tineke:
+  entity_picture: /local/images/tineke.jpg
+automation.naar_bed:
+  icon: mdi:bed
