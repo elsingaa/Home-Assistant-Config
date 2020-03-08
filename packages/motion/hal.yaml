@@ -3,31 +3,31 @@
 #             MOTION RESPONSE IN THE HALLWAY            #
 #                                                       #
 #########################################################
-automation:
-- alias: Turn on light in the hallway when there is movement
-  trigger:
-    platform: state
-    entity_id: binary_sensor.sensor_motion_hal
-    to: 'on'
-  condition:
-    - condition: numeric_state
-      entity_id: sensor.sensor_hal_light_level
-      below: 5
-  action:
-  - service: timer.start
-    entity_id: timer.timer_hal
-  - service: light.turn_on
-    entity_id: light.overloop
-
-- alias: Turn off lights in the hallway 3 minutes after last movement
-  trigger:
-  - platform: event
-    event_type: timer.finished
-    event_data:
-     entity_id: timer.timer_hal
-  action:
-  - service: light.turn_off
-    entity_id: light.overloop    
+#automation:
+#- alias: Turn on light in the hallway when there is movement
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.sensor_motion_hal
+#    to: 'on'
+#  condition:
+#    - condition: numeric_state
+#      entity_id: sensor.sensor_hal_light_level
+#      below: 5
+#  action:
+#  - service: timer.start
+#    entity_id: timer.timer_hal
+#  - service: light.turn_on
+#    entity_id: light.overloop
+#
+#- alias: Turn off lights in the hallway 3 minutes after last movement
+#  trigger:
+#  - platform: event
+#    event_type: timer.finished
+#    event_data:
+#     entity_id: timer.timer_hal
+#  action:
+#  - service: light.turn_off
+#    entity_id: light.overloop    
 
 #- alias: Turn lights on in living room when it is dark and motion occurs in hallway and it is dark 
 #  trigger:

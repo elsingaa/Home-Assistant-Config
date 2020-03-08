@@ -68,3 +68,41 @@
     service: timer.start
   - entity_id: light.overloop
     service: light.turn_on
+- id: '1577895200056'
+  alias: Turn on receiver when TV turns on
+  description: ''
+  trigger:
+  - entity_id: media_player.ue46d6200_ue46d6200
+    platform: state
+    to: 'on'
+  condition: []
+  action:
+  - alias: Turn on Denon receiver
+    data: {}
+    entity_id: media_player.denon_x2100w
+    service: media_player.turn_on
+
+- alias: Turn on light in the hallway when there is movement
+  trigger:
+    platform: state
+    entity_id: binary_sensor.sensor_motion_hal
+    to: 'on'
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.sensor_hal_light_level
+      below: 5
+  action:
+  - service: timer.start
+    entity_id: timer.timer_hal
+  - service: light.turn_on
+    entity_id: light.overloop
+
+- alias: Turn off lights in the hallway 3 minutes after last movement
+  trigger:
+  - platform: event
+    event_type: timer.finished
+    event_data:
+     entity_id: timer.timer_hal
+  action:
+  - service: light.turn_off
+    entity_id: light.overloop
