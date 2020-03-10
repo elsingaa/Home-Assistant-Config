@@ -17,23 +17,23 @@ light:
 #         TURN ON LIVING ROOM LAMPS WHEN HOME           #
 #                                                       #
 #########################################################
-automation:
+#automation:
 
-- alias: "Turn on lights when home at sunset"
-  trigger:
-    platform: sun
-    event: sunset
-  condition:
-     condition: and
-     conditions:
-     - condition: state
-       entity_id: switch.somebodys_home
-       state: 'On'
-     - condition: template
-       value_template: "{{ states.sun.sun.attributes.elevation  | int < 10 }}" 
-  action:
-    - service: light.turn_on
-      entity_id: light.Woonkamer_verlichting
-    - service: light.turn_on
-      entity_id: light.achterdebank
+#- alias: "Turn on lights when home at sunset"
+#  trigger:
+#    platform: sun
+#    event: sunset
+#  condition:
+#     condition: and
+#     conditions:
+#     - condition: state
+#       entity_id: switch.somebodys_home
+#       state: 'On'
+#     - condition: template
+#       value_template: "{{ states.sun.sun.attributes.elevation  | int < 10 }}" 
+#  action:
+#    - service: light.turn_on
+#      entity_id: light.Woonkamer_verlichting
+#    - service: light.turn_on
+#      entity_id: light.achterdebank
 
