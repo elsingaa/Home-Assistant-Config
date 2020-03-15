@@ -4,7 +4,7 @@ default_config:
 
 homeassistant:
         packages: !include_dir_named packages
-
+        customize: !include customize.yaml
         latitude: !secret home_latitude
         longitude: !secret home_longitude
         elevation: !secret home_elevation
