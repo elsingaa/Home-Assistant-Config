@@ -32,7 +32,7 @@ binary_sensor:
 device_tracker:
   - platform: huesensor
 remote:
-  - platform: huesensor
+  - platform: hueremote
 
 uilogs:
 
