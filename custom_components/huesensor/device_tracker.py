@@ -1,21 +1,14 @@
-"""
-Device tracking with the Hue app.
-"""
+"""Device tracking with the Hue app."""
 import asyncio
 import logging
 from datetime import timedelta
 
-import async_timeout
-
 import homeassistant.util.dt as dt_util
 from homeassistant.components import zone
-from homeassistant.components.device_tracker import PLATFORM_SCHEMA
-from homeassistant.components.device_tracker.const import (
-    ATTR_ATTRIBUTES,
-    CONF_SCAN_INTERVAL,
-    DOMAIN,
-    ENTITY_ID_FORMAT,
+from homeassistant.components.device_tracker import (  # noqa: F401
+    PLATFORM_SCHEMA,
 )
+from homeassistant.components.device_tracker.const import CONF_SCAN_INTERVAL
 from homeassistant.components.device_tracker.legacy import DeviceScanner
 from homeassistant.const import (
     ATTR_GPS_ACCURACY,
@@ -27,8 +20,7 @@ from homeassistant.const import (
 from homeassistant.helpers.event import async_track_time_interval
 from homeassistant.util import slugify
 
-from . import get_bridges, update_api
-
+from .data_manager import async_get_bridges
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -64,7 +56,9 @@ class HueDeviceScanner(DeviceScanner):
             "dev_id": slugify("hue_{}".format(sensor.name)),
             "host_name": sensor.name,
             "attributes": {
-                "last_updated": dt_util.as_local(dt_util.parse_datetime(last_updated)),
+                "last_updated": dt_util.as_local(
+                    dt_util.parse_datetime(last_updated)
+                ),
                 "unique_id": sensor.uniqueid,
             },
         }
@@ -93,18 +87,12 @@ class HueDeviceScanner(DeviceScanner):
 
     async def async_update_info(self, now=None):
         """Get the bridge info."""
-        bridges = get_bridges(self.hass)
-        if not bridges:
-            return
-        await asyncio.wait(
-            [update_api(bridge.api.sensors) for bridge in bridges], loop=self.hass.loop
-        )
-        sensors = [
-            self.async_see_sensor(sensor)
-            for bridge in bridges
-            for sensor in bridge.api.sensors.values()
-            if sensor.type == TYPE_GEOFENCE
-        ]
-        if not sensors:
-            return
-        await asyncio.wait(sensors)
+        async for bridge in async_get_bridges(self.hass):
+            await bridge.sensor_manager.coordinator.async_request_refresh()
+            tasks = [
+                self.async_see_sensor(sensor)
+                for sensor in bridge.api.sensors.values()
+                if sensor.type == TYPE_GEOFENCE
+            ]
+            if tasks:
+                await asyncio.wait(tasks)
