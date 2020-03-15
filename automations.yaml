@@ -24,12 +24,21 @@
   trigger: []
   condition: []
   action:
+  - data: {}
+    entity_id: input_boolean.night_mode
+    service: input_boolean.turn_on
   - scene: scene.naar_bed
-  - delay: 00:01:00
   - device_id: 1cdd7b07c0b64ebbaf72da61411445a7
     domain: light
     entity_id: light.erker
     type: turn_off
+  - data: {}
+    entity_id: media_player.ue46d6200_ue46d6200
+    service: media_player.turn_off
+  - data: {}
+    entity_id: media_player.denon_x2100w
+    service: media_player.turn_off
+  - delay: 00:01:00
 - id: '1580850032738'
   alias: turn on light when macbook tineke comes from screen saver
   description: ''
@@ -44,8 +53,8 @@
     entity_id: light.bureaulamp_tineke
     service: light.turn_on
 - id: '1581155917396'
-  alias: Update location
-  description: ''
+  alias: 'Presence: Update location'
+  description: 'Presence: Update location'
   trigger: []
   condition: []
   action:
@@ -125,6 +134,7 @@
     entity_id: input_boolean.quiet_mode
     service: input_boolean.turn_off
 - alias: to night mode
+  id: 158373aa3854299'
   description: ''
   trigger:
   - entity_id: input_boolean.night_mode
@@ -142,6 +152,7 @@
     entity_id: input_boolean.quiet_mode
     service: input_boolean.turn_off
 - alias: to quiet mode
+  id: 158373bb3854299'
   description: ''
   trigger:
   - entity_id: input_boolean.quiet_mode
@@ -159,6 +170,7 @@
     entity_id: input_boolean.night_mode
     service: input_boolean.turn_off
 - alias: to guest mode
+  id: 158373aa38542dd'
   description: ''
   trigger:
   - entity_id: input_boolean.guest_mode
@@ -176,6 +188,7 @@
     entity_id: input_boolean.quiet_mode
     service: input_boolean.turn_off
 - alias: at sun rise turn off the lights in the living room
+  id: 158373aa3854ee'
   description: ''
   trigger:
   - event: sunrise
@@ -190,3 +203,14 @@
     domain: light
     entity_id: light.tradfri_driver
     type: turn_off
+- id: '1583878198776'
+  alias: Set house to day mode
+  description: ''
+  trigger:
+  - at: 06:20
+    platform: time
+  condition: []
+  action:
+  - data: {}
+    entity_id: input_boolean.day_mode
+    service: input_boolean.turn_on
