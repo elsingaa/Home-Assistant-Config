@@ -3,6 +3,7 @@
   description: ''
   trigger:
   - event: sunset
+    offset: -00:15:00
     platform: sun
   condition: []
   action:
@@ -38,6 +39,9 @@
   - data: {}
     entity_id: media_player.denon_x2100w
     service: media_player.turn_off
+  - data: {}
+    entity_id: light.schilderij
+    service: light.turn_off
   - delay: 00:01:00
 - id: '1580850032738'
   alias: turn on light when macbook tineke comes from screen saver
