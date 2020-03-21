@@ -37,4 +37,4 @@ remote:
 uilogs:
 
 automation: !include automations.yaml
-script: !include_dir_merge_named scripts
+script: !include scripts.yaml
