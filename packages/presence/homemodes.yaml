@@ -1,0 +1,43 @@
+#########################################################
+#                                                       #
+#                  HOME MODE SENSORS                    #
+#                                                       #
+#########################################################
+
+input_boolean: 
+  guest_mode:
+    name: Gasten
+    icon: mdi:account-group
+    initial: off
+
+  quiet_mode:
+    name: Stil
+    icon: mdi:bell-off-outline
+    initial: off
+
+  day_mode:
+    name: Dag
+    icon: mdi:weather-sunny
+    initial: on
+  
+  night_mode:
+    name: Nacht
+    icon: mdi:weather-night
+    initial: off
+  
+  sleep_mode:
+    name: Slapen
+    icon: mdi:sleep
+    initial: off
+
+input_select:
+  house_mode:
+    name: House Mode
+    options:
+      - "Gasten"
+      - "Dag"
+      - "Nacht"
+      - "Stil"
+    icon: mdi:target
+
+
