@@ -36,5 +36,14 @@ remote:
 
 uilogs:
 
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: !secret influxdb_db
+  username: !secret influxdb_user
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
+
 automation: !include automations.yaml
 script: !include scripts.yaml
