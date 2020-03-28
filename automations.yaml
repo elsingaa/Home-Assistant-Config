@@ -19,30 +19,6 @@
     domain: light
     entity_id: light.achterdebank
     type: turn_on
-- id: '1580676841533'
-  alias: Naar bed
-  description: Turn things of when going to bed
-  trigger: []
-  condition: []
-  action:
-  - data: {}
-    entity_id: input_boolean.night_mode
-    service: input_boolean.turn_on
-  - scene: scene.naar_bed
-  - device_id: 1cdd7b07c0b64ebbaf72da61411445a7
-    domain: light
-    entity_id: light.erker
-    type: turn_off
-  - data: {}
-    entity_id: media_player.ue46d6200_ue46d6200
-    service: media_player.turn_off
-  - data: {}
-    entity_id: media_player.denon_x2100w
-    service: media_player.turn_off
-  - data: {}
-    entity_id: light.schilderij
-    service: light.turn_off
-  - delay: 00:01:00
 - id: '1580850032738'
   alias: turn on light when macbook tineke comes from screen saver
   description: ''
@@ -137,8 +113,8 @@
   - data: {}
     entity_id: input_boolean.quiet_mode
     service: input_boolean.turn_off
-- alias: to night mode
-  id: 158373aa3854299'
+- id: 158373aa3854299'
+  alias: to night mode
   description: ''
   trigger:
   - entity_id: input_boolean.night_mode
@@ -152,29 +128,8 @@
   - data: {}
     entity_id: input_boolean.guest_mode
     service: input_boolean.turn_off
-  - data: {}
-    entity_id: input_boolean.quiet_mode
-    service: input_boolean.turn_off
-- alias: to quiet mode
-  id: 158373bb3854299'
-  description: ''
-  trigger:
-  - entity_id: input_boolean.quiet_mode
-    platform: state
-    to: 'on'
-  condition: []
-  action:
-  - data: {}
-    entity_id: input_boolean.day_mode
-    service: input_boolean.turn_off
-  - data: {}
-    entity_id: input_boolean.guest_mode
-    service: input_boolean.turn_off
-  - data: {}
-    entity_id: input_boolean.night_mode
-    service: input_boolean.turn_off
-- alias: to guest mode
-  id: 158373aa38542dd'
+- id: 158373aa38542dd'
+  alias: to guest mode
   description: ''
   trigger:
   - entity_id: input_boolean.guest_mode
@@ -187,9 +142,6 @@
     service: input_boolean.turn_off
   - data: {}
     entity_id: input_boolean.night_mode
-    service: input_boolean.turn_off
-  - data: {}
-    entity_id: input_boolean.quiet_mode
     service: input_boolean.turn_off
 - alias: at sun rise turn off the lights in the living room
   id: 158373aa3854ee'
