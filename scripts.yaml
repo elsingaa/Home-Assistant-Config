@@ -11,6 +11,10 @@ naar_bed:
   - data: {}
     entity_id: media_player.ue46d6200_ue46d6200
     service: media_player.turn_off
+  - delay: 00:02:00
+  - data: {}
+    entity_id: light.erker
+    service: light.turn_off
 check_config:
   sequence: []
   alias: Check Configuration
