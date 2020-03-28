@@ -83,6 +83,8 @@ frontend:
     paper-font-title_-_font-family: "var(--primary-font-family)"
 
   darkcyan:
+# data tables
+    data-table-background-color: "rgba(0, 0, 0, 1)"
 # Main colors that can be changed
     primary-color: "#00bcd4"
     disabled-text-color: "#545454"
