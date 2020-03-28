@@ -18,3 +18,5 @@ person.tineke:
   entity_picture: /local/images/tineke.jpg
 automation.naar_bed:
   icon: mdi:bed
+light.bureaulamp_tineke:
+  icon: mdi:desk-lamp
