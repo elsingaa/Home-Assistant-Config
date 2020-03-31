@@ -170,3 +170,79 @@
   - data: {}
     entity_id: input_boolean.day_mode
     service: input_boolean.turn_on
+
+- id: '202003312007'
+  alias: Play Sonos in the morning (Tineke-werkdagen)
+  description: ''
+  trigger:
+  - at: '7:00'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'on'
+    - condition: state
+      entity_id: 'input_boolean.wekker_tineke_werkdagen'
+      state: 'on'
+  action:
+  - entity_id: media_player.slaapkamer
+    service: sonos.play_queue
+
+- id: '202003312008'
+  alias: Play Sonos in the morning (Tineke-weekend)
+  description: ''
+  trigger:
+  - at: '8:00'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'off'
+    - condition: state
+      entity_id: 'input_boolean.wekker_tineke_weekend'
+      state: 'on'
+  action:
+  - entity_id: media_player.slaapkamer
+    service: sonos.play_queue
+
+- id: '2020033122045'
+  alias: Play Sonos in the morning (AJ-werkdagen)
+  description: ''
+  trigger:
+  - at: '7:00'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'on'
+    - condition: state
+      entity_id: 'input_boolean.wekker_aj_werkdagen'
+      state: 'on'
+  action:
+  - entity_id: media_player.slaapkamer
+    service: sonos.play_queue
+
+- id: '202003312107'
+  alias: Play Sonos in the morning (AJ-weekend)
+  description: ''
+  trigger:
+  - at: '8:00'
+    platform: time
+  condition:
+    condition: and
+    conditions:
+    - condition: state
+      entity_id: 'binary_sensor.workday_sensor'
+      state: 'on'
+    - condition: state
+      entity_id: 'input_boolean.wekker_aj_weekend'
+      state: 'on'
+  action:
+  - entity_id: media_player.slaapkamer
+    service: sonos.play_queue

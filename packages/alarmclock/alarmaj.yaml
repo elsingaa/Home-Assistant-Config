@@ -1,0 +1,27 @@
+#automation:
+#- alias: Play Sonos in the morning (AJ-werkdagen)
+#  description: ''
+#  trigger:
+#  - at: '7:00'
+#    platform: time
+#  condition:
+#    condition: and
+#    conditions:
+#    - condition: state
+#      entity_id: 'binary_sensor.workday_sensor'
+#      state: 'on'
+#    - condition: state
+#      entity_id: 'input_boolean.wekker_aj_werkdagen'
+#      state: 'on'
+#  action:
+#  - entity_id: media_player.slaapkamer
+#    service: sonos.play_queue
+
+input_boolean:
+  wekker_aj_werkdagen:
+    name: Wekker Anne Jan werkdagen
+    initial: on
+
+  wekker_aj_weekend:
+    name: Wekker Anne Jan weekend
+    initial: on
