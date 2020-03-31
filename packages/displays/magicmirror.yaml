@@ -14,37 +14,37 @@ switch:
 
 input_boolean:
   override_magicmirror_power:
-    name: Magic Mirror override
+    name: Magic Mirror auto aan
     initial: on
 
 automation:
 
 # Turn on magic mirror when movement occurs in the hallway    
-- alias: Turn on magic mirror when movement occurs in the hallway
-  trigger:
-    platform: state
-    entity_id: binary_sensor.sensor_hal_motion
-    to: 'on'
-  condition:
-    - condition: state
-      entity_id: input_boolean.override_magicmirror_power
-      state: 'on'
-  action:
-  - service: timer.start
-    entity_id: timer.timer_magicmirror01
- 
-  - service: switch.turn_on
-    entity_id: switch.magicmirror01
-
-- alias: Turn off magic mirror 10 minutes after last movement
-  trigger:
-  - platform: event
-    event_type: timer.finished
-    event_data:
-     entity_id: timer.timer_magicmirror01
-  action:
-    service: switch.turn_off
-    entity_id: switch.magicmirror01
+#- alias: Turn on magic mirror when movement occurs in the hallway
+#  trigger:
+#    platform: state
+#    entity_id: binary_sensor.sensor_hal_motion
+#    to: 'on'
+#  condition:
+#    - condition: state
+#      entity_id: input_boolean.override_magicmirror_power
+#      state: 'on'
+#  action:
+#  - service: timer.start
+#    entity_id: timer.timer_magicmirror01
+# 
+#  - service: switch.turn_on
+#    entity_id: switch.magicmirror01
+#
+#- alias: Turn off magic mirror 10 minutes after last movement
+#  trigger:
+#  - platform: event
+#    event_type: timer.finished
+#    event_data:
+#     entity_id: timer.timer_magicmirror01
+#  action:
+#    service: switch.turn_off
+#    entity_id: switch.magicmirror01
 
 timer:
   timer_magicmirror01:
