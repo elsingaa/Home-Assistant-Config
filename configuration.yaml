@@ -36,6 +36,13 @@ remote:
 
 uilogs:
 
+media_player:
+  - platform: snapcast
+    host: !secret snapcastserver
+
+  - platform: mpd
+    host: mpdserver
+
 influxdb:
   host: a0d7b954-influxdb
   port: 8086

@@ -20,3 +20,11 @@ automation.naar_bed:
   icon: mdi:bed
 light.bureaulamp_tineke:
   icon: mdi:desk-lamp
+media_player.snapcast_client_00_50_56_82_5c_de:
+  friendly_name: snapcast_audiostation
+media_player.snapcast_client_60_03_08_a9_e3_94:
+  friendly_name: snapcast_mbpaj
+media_player.snapcast_client_dc_a6_32_4c_f4_71:
+  friendly_name: snapcast_hal
+media_player.snapcast_client_b8_27_eb_2e_04_5d:
+  friendly_name: snapcast_keuken
